@@ -8,8 +8,8 @@ from typing import List
 from telegram import Update
 from telegram.ext import run_async,CallbackContext
 
-from MashaRoBot import dispatcher
-from MashaRoBot.modules.disable import DisableAbleCommandHandler
+from LaylaRobot import dispatcher
+from LaylaRobot.modules.disable import DisableAbleCommandHandler
 
 #sleep how many times after each edit in 'love' 
 EDIT_SLEEP = 1
