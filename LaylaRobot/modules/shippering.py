@@ -22,7 +22,7 @@ today = str(dt()[0])
 tomorrow = str(dt_tom())
 
 
-@app.on_message(filters.command("couples") & ~filters.edited)
+@app.on_message(filters.command("shipping") & ~filters.edited)
 async def couple(_, message):
     if message.chat.type == "private":
         await message.reply_text("Perintah ini hanya berfungsi dalam grup.")
@@ -47,7 +47,7 @@ async def couple(_, message):
 
             couple_selection_message = f"""**Pasangan hari ini:**
 {c1_mention} + {c2_mention} = ❤️
-__Pasangan baru hari ini dapat dipilih pada jam 12Am {tomorrow}__"""
+Pasangan baru berikutnya dapat dipilih pada jam 12Am {tomorrow}"""
             await app.send_message(
                 message.chat.id,
                 text=couple_selection_message
@@ -65,7 +65,7 @@ __Pasangan baru hari ini dapat dipilih pada jam 12Am {tomorrow}__"""
             c2_name = (await app.get_users(c2_id)).first_name
             couple_selection_message = f"""Couple of the day:
 [{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = ❤️
-__Pasangan baru hari ini dapat dipilih pada jam 12Am {tomorrow}__"""
+Pasangan baru berikutnya dapat dipilih pada jam 12Am {tomorrow}__"""
             await app.send_message(
                 message.chat.id,
                 text=couple_selection_message
@@ -77,7 +77,7 @@ __Pasangan baru hari ini dapat dipilih pada jam 12Am {tomorrow}__"""
 
 
 __help__ = """
- ❍ /couples - To Choose Couple Of The Day
+ ❍ /shipping - To Choose Couple Of The Day
  """
-__mod_name__ = "Couples"
+__mod_name__ = "Couple"
 
