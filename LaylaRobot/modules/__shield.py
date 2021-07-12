@@ -48,7 +48,7 @@ MONGO_DB_URI = get_str_key("MONGO_DB_URI")
 
 client = MongoClient()
 client = MongoClient(MONGO_DB_URI)
-db = client["LaylaRobot"]
+db = client["yonerobot"]
 
 async def is_nsfw(event):
     lmao = event
@@ -430,7 +430,7 @@ async def del_profanity(event):
 
 __help__ = """
 *Group Guardian:*
-✪ Yone can protect your group from NSFW senders, Slag word users and also can force members to use English
+✪ Bot can protect your group from NSFW senders, Slag word users and also can force members to use English
 *Commands*
  - /gshield (on/off) - Enable|Disable Porn cleaning
  - /globalmode (on/off) - Enable|Disable English only mode
