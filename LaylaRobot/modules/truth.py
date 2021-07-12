@@ -3,7 +3,7 @@
 
 import html
 import random
-import LaylaRobot.modules.truth_and_dare_string as truth_and_dare_string
+import LaylaRobot.modules.truth_and_dare_string
 from LaylaRobot import dispatcher
 from telegram import ParseMode, Update, Bot
 from LaylaRobot.modules.disable import DisableAbleCommandHandler
