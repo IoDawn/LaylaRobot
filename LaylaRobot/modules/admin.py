@@ -105,7 +105,7 @@ def promote(update: Update, context: CallbackContext) -> str:
 
     log_message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"USER PROMOTED SUCCESSFULLY\n"
+        f"#PROMOTED\n"
         f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
         f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
     )
@@ -128,11 +128,6 @@ def demote(update: Update, context: CallbackContext) -> str:
     user = update.effective_user
 
     user_id = extract_user(message, args)
-
-    if user_can_promote(chat, user, context.bot.id) is False:
-        message.reply_text("You don't have enough rights to demote someone!")
-        return ""
-
     if not user_id:
         message.reply_text(
             "You don't seem to be referring to a user or the ID specified is incorrect.."
@@ -178,7 +173,7 @@ def demote(update: Update, context: CallbackContext) -> str:
 
         log_message = (
             f"<b>{html.escape(chat.title)}:</b>\n"
-            f"USER DEMOTED SUCCESSFULLY\n"
+            f"#DEMOTED\n"
             f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
             f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
         )
@@ -200,7 +195,7 @@ def refresh_admin(update, _):
     except KeyError:
         pass
 
-    update.effective_message.reply_text("Admins cache refreshed!")
+    update.effective_message.reply_text("✅ Bot restarted\n✅ Admin list updated")
 
 
 @run_async
@@ -439,10 +434,6 @@ def pin(update: Update, context: CallbackContext) -> str:
     is_group = chat.type != "private" and chat.type != "channel"
     prev_message = update.effective_message.reply_to_message
 
-    if user_can_pin(chat, user, context.bot.id) is False:
-        message.reply_text("You are missing rights to pin a message!")
-        return ""
-
     is_silent = True
     if len(args) >= 1:
         is_silent = not (
@@ -463,7 +454,7 @@ def pin(update: Update, context: CallbackContext) -> str:
                 raise
         log_message = (
             f"<b>{html.escape(chat.title)}:</b>\n"
-            f"MESSAGE PINNED SUCCESSFULLY\n"
+            f"#PINNED\n"
             f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}"
         )
 
@@ -490,7 +481,7 @@ def unpin(update: Update, context: CallbackContext) -> str:
 
     log_message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"MESSAGE UNPINNED SUCCESSFULLY\n"
+        f"#UNPINNED\n"
         f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}"
     )
 
@@ -548,7 +539,7 @@ def adminlist(update, context):
         )
 
     administrators = bot.getChatAdministrators(chat_id)
-    text = "Admins in <b>{}</b>:".format(html.escape(update.effective_chat.title))
+    text = "STAFF IN <b>{}</b>:".format(html.escape(update.effective_chat.title))
 
     bot_admin_list = []
 
@@ -573,14 +564,14 @@ def adminlist(update, context):
 
         # if user.username:
         #    name = escape_markdown("@" + user.username)
-        if status == "creator":
-            text += "\n 👑 Creator:"
-            text += "\n<code> • </code>{}\n".format(name)
+        if status == "Creator":
+            text += "\n👑 <b>Creator</b>"
+            text += "\n └{}\n".format(name)
 
             if custom_title:
                 text += f"<code> ┗━ {html.escape(custom_title)}</code>\n"
 
-    text += "\n🔱 Admins:"
+    text += "\n⚜️ <b>Admins</b>"
 
     custom_admin_list = {}
     normal_admin_list = []
@@ -610,11 +601,11 @@ def adminlist(update, context):
                 normal_admin_list.append(name)
 
     for admin in normal_admin_list:
-        text += "\n<code> • </code>{}".format(admin)
+        text += "\n └{}".format(admin)
 
     for admin_group in custom_admin_list.copy():
         if len(custom_admin_list[admin_group]) == 1:
-            text += "\n<code> • </code>{} | <code>{}</code>".format(
+            text += "\n └{} | <code>{}</code>".format(
                 custom_admin_list[admin_group][0], html.escape(admin_group)
             )
             custom_admin_list.pop(admin_group)
@@ -626,9 +617,9 @@ def adminlist(update, context):
             text += "\n<code> • </code>{}".format(admin)
         text += "\n"
 
-    text += "\n🤖 Bots:"
+    text += "\n🤖 <b>Bots</b>"
     for each_bot in bot_admin_list:
-        text += "\n<code> • </code>{}".format(each_bot)
+        text += "\n └{}".format(each_bot)
 
     try:
         msg.edit_text(text, parse_mode=ParseMode.HTML)
@@ -637,32 +628,25 @@ def adminlist(update, context):
 
 
 __help__ = """
- ❍ /admins*:* list of admins in the chat
+❍ /admins*:* Cek daftar admin di grup anda
 
 *Admins only:*
- ❍ /pin*:* silently pins the message replied to - add `'loud'` or `'notify'` to give notifs to users
- ❍ /unpin*:* unpins the currently pinned message
- ❍ /invitelink*:* gets invitelink
- ❍ /promote*:* promotes the user
- ❍ /demote*:* demotes the user
- ❍ /title <title here>*:* sets a custom title for an admin that the bot promoted
- ❍ /setgtitle <newtitle>*:* Sets new chat title in your group.
- ❍ /setgpic*:* As a reply to file or photo to set group profile pic!
- ❍ /delgpic*:* Same as above but to remove group profile pic.
- ❍ /setsticker*:* As a reply to some sticker to set it as group sticker set!
- ❍ /setdescription <description>*:* Sets new chat description in group.
- ❍ /admincache*:* force refresh the admins list
- ❍ /antispam <on/off/yes/no>*:* Will toggle our antispam tech or return your current settings.
- ❍ /del*:* deletes the message you replied to
- ❍ /purge*:* deletes all messages between this and the replied to message.
- ❍ /purge <integer X>*:* deletes the replied message, and X messages following it if replied to a message.
- ❍ /zombies: counts the number of deleted account in your group
- ❍ /zombies clean: Remove deleted accounts from group..
-
-*Note:* Night Mode chats get Automatically closed at 12 am(IST)
-and Automatically openned at 6 am(IST) To Prevent Night Spams.
-
-⚠️ `Read from top`
+ ❍ /pin*:* Menyematkan pesan yang dibalas tanpa notif- tambahkan 'loud' atau 'notify' untuk memberikan notifikasi kepada anggota grup
+ ❍ /unpin*:* Melepas pin pesan yang saat ini disematkan
+ ❍ /invitelink*:* Dapatkan tautan grup
+ ❍ /promote*:* Promote user
+ ❍ /demote*:* Turunkan jabatan user
+ ❍ /title <title>*:* Menetapkan judul khusus untuk admin yang dipromosikan bot
+ ❍ /reload*:* Refresh daftar admin
+ ❍ /antispam <on/off>*:* Akan mengaktifkan teknologi antispam kami atau melihat pengaturan Anda saat ini.
+ ❍ /setgtitle <title>*:* Menetapkan judul obrolan baru di grup Anda.
+ ❍ /setgpic*:* Balas ke file atau foto untuk mengatur foto profil grup!
+ ❍ /delgpic*:* Sama seperti di atas tetapi untuk menghapus foto profil grup.
+ ❍ /setsticker*:* Balas ke stiker untuk menjadikannya sebagai pack stiker grup!
+ ❍ /setdescription <deskripsi>*:* Tetapkan deskripsi obrolan baru di grup.
+ ❍ /zombies*:* Temukan semua akun mati di grup Anda.
+ ❍ /zombies clean*:* Hapus semua akun mati dari grup Anda.
+ 
 """
 
 ADMINLIST_HANDLER = DisableAbleCommandHandler("admins", adminlist)
@@ -677,7 +661,7 @@ DEMOTE_HANDLER = DisableAbleCommandHandler("demote", demote)
 
 SET_TITLE_HANDLER = CommandHandler("title", set_title)
 ADMIN_REFRESH_HANDLER = CommandHandler(
-    "admincache", refresh_admin, filters=Filters.group
+    "reload", refresh_admin, filters=Filters.group
 )
 
 CHAT_PIC_HANDLER = CommandHandler("setgpic", setchatpic, filters=Filters.group)
@@ -714,7 +698,7 @@ __command_list__ = [
     "invitelink",
     "promote",
     "demote",
-    "admincache",
+    "reload",
 ]
 __handlers__ = [
     ADMINLIST_HANDLER,
