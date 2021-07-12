@@ -1,3 +1,6 @@
+#Truth and Dare Plugins
+#dare plugins
+
 __mod_name__ = "🀄️Dare"
 __help__ = """
 🏷 /dare : untuk tantangan acak
