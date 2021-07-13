@@ -1,28 +1,73 @@
-#Truth and Dare Plugins
-#truth plugins
+from telethon.tl.types import InputMediaDice
 
-import html
-import random
-import LaylaRobot.modules.truth_and_dare_string
-from LaylaRobot import dispatcher
-from telegram import ParseMode, Update, Bot
-from LaylaRobot.modules.disable import DisableAbleCommandHandler
-from telegram.ext import CallbackContext, run_async
-
-@run_async
-def truth(update: Update, context: CallbackContext):
-    args = context.args
-    update.effective_message.reply_text(random.choice(truth_and_dare_string.TRUTH))
+from Tianabot.events import register
 
 
-__mod_name__ = "🎴Truth"
+@register(pattern="^/dice(?: |$)(.*)")
+async def _(event):
+    if event.fwd_from:
+        return
+    input_str = event.pattern_match.group(1)
+    r = await event.reply(file=InputMediaDice(""))
+    input_int = int(input_str)
+    if input_int > 6:
+        await event.reply("hey nigga use number 1 to 6 only")
+    
+    else:
+        try:
+            required_number = input_int
+            while r.media.value != required_number:
+                await r.delete()
+                r = await event.reply(file=InputMediaDice(""))
+        except BaseException:
+            pass
+
+
+@register(pattern="^/dart(?: |$)(.*)")
+async def _(event):
+    if event.fwd_from:
+        return
+    input_str = event.pattern_match.group(1)
+    r = await event.reply(file=InputMediaDice("🎯"))
+    input_int = int(input_str)
+    if input_int > 6:
+        await event.reply("hey nigga use number 1 to 6 only")
+    
+    else:
+        try:
+            required_number = input_int
+            while r.media.value != required_number:
+                await r.delete()
+                r = await event.reply(file=InputMediaDice("🎯"))
+        except BaseException:
+            pass
+
+
+@register(pattern="^/ball(?: |$)(.*)")
+async def _(event):
+    if event.fwd_from:
+        return
+    input_str = event.pattern_match.group(1)
+    r = await event.reply(file=InputMediaDice("🏀"))
+    input_int = int(input_str)
+    if input_int > 5:
+        await event.reply("hey nigga use number 1 to 6 only")
+    
+    else:
+        try:
+            required_number = input_int
+            while r.media.value != required_number:
+                await r.delete()
+                r = await event.reply(file=InputMediaDice("🏀"))
+        except BaseException:
+            pass
+
+
+
 __help__ = """
 🏷 `/truth` : untuk kejujuran acak
 
 Jika ingin req pertanyaan kirim ke @RosoOwner_bot
 """
 
-TRUTH_HANDLER = DisableAbleCommandHandler("truth", truth)
-
-
-dispatcher.add_handler(TRUTH_HANDLER)
+__mod_name__ = "🎴Truth"
