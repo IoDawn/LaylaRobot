@@ -309,9 +309,8 @@ def help_button(update, context):
                             InlineKeyboardButton(text="🔐Lock", callback_data="tutup_"),
                             InlineKeyboardButton(text="Back❌", callback_data="help_back")],
                         ]
-                    ]
-                ),
-            )
+                    ),
+                )
 
         elif prev_match:
             curr_page = int(prev_match.group(1))
