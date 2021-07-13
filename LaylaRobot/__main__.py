@@ -192,8 +192,8 @@ def start(update: Update, context: CallbackContext):
                     InlineKeyboardMarkup(
                       [
                        [
-                          InlineKeyboardButton(text="Lock", callback_data="tutup_")
-                          InlineKeyboardButton(text="Back", callback_data="help_back")],
+                          InlineKeyboardButton(text="Lock🔐", callback_data="tutup_"),
+                          InlineKeyboardButton(text="Back❌", callback_data="help_back")],
                        ]
                       ]
                   ),
