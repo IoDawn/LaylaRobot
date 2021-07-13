@@ -190,14 +190,9 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                      [
-                       [
-                          InlineKeyboardButton(text="Lock🔐", callback_data="tutup_"),
-                          InlineKeyboardButton(text="Back❌", callback_data="help_back")],
-                       ]
-                      ]
-                  ),
-              )
+                        [[InlineKeyboardButton(text="⬅️ BACK", callback_data="help_back")]]
+                    ),
+                )
 
             elif args[0].lower().startswith("stngs_"):
                 match = re.match("stngs_(.*)", args[0].lower())
@@ -309,7 +304,12 @@ def help_button(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
+                    [
+                        [
+                            InlineKeyboardButton(text="🔐Lock", callback_data="tutup_"),
+                            InlineKeyboardButton(text="Back❌", callback_data="help_back")],
+                        ]
+                    ]
                 ),
             )
 
@@ -387,7 +387,7 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..🤗 I'm *Roso*
+            text=""" Hi.. I'm *Roso*
                  \nHere is the [Source Code](https://github.com/QueenArzoo/LaylaRobot) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
