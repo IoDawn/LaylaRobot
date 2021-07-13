@@ -190,9 +190,14 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="⬅️ BACK", callback_data="help_back")]]
-                    ),
-                )
+                      [
+                       [
+                          InlineKeyboardButton(text="Lock", callback_data="tutup_")
+                          InlineKeyboardButton(text="Back", callback_data="help_back")],
+                       ]
+                      ]
+                  ),
+              )
 
             elif args[0].lower().startswith("stngs_"):
                 match = re.match("stngs_(.*)", args[0].lower())
@@ -382,7 +387,7 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..🤗 I'm *Layla*
+            text=""" Hi..🤗 I'm *Roso*
                  \nHere is the [Source Code](https://github.com/QueenArzoo/LaylaRobot) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -402,6 +407,22 @@ def Source_about_callback(update, context):
                 timeout=60,
                 disable_web_page_preview=False,
         )
+
+
+@run_async
+def tutup_about_callback(update: Update, context: CallbackContext):
+    query = update.callback_query
+    if query.data == "tutup_":
+        query.message.edit_text(
+            text=f"*Menu Closed*🔐"
+            f"",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Open", callback_data="help_back")]]
+            ),
+        )
+
 
 @run_async
 def get_help(update: Update, context: CallbackContext):
@@ -699,6 +720,7 @@ def main():
 
     about_callback_handler = CallbackQueryHandler(layla_about_callback, pattern=r"layla_")
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
+    tutup_callback_handler = CallbackQueryHandler(tutup_about_callback, pattern=r"tutup_")
 
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
@@ -708,6 +730,7 @@ def main():
     dispatcher.add_handler(help_handler)
     dispatcher.add_handler(about_callback_handler)
     dispatcher.add_handler(source_callback_handler)
+    dispatcher.add_handler(tutup_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
