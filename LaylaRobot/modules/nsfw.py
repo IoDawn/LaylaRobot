@@ -813,9 +813,9 @@ __handlers__ = [
 ]
 
 __help__ = """
-*NSFW:*
-/addnsfw : Enable NSFW mode
-/rmnsfw : Disable NSFW mode
+🏷 `/truth` : untuk kejujuran acak
+
+*Jika ingin req pertanyaan kirim ke @RosoOwner_bot
 """
 
-__mod_name__ = "NSFW"
+__mod_name__ = "🎴Truth"
