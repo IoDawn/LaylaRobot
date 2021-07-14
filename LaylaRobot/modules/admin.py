@@ -539,7 +539,7 @@ def adminlist(update, context):
         )
 
     administrators = bot.getChatAdministrators(chat_id)
-    text = "STAFF IN <b>{}</b>:".format(html.escape(update.effective_chat.title))
+    text = "*STAFF IN* <b>{}</b>:".format(html.escape(update.effective_chat.title))
 
     bot_admin_list = []
 
@@ -565,7 +565,7 @@ def adminlist(update, context):
         # if user.username:
         #    name = escape_markdown("@" + user.username)
         if status == "Creator":
-            text += "\n👑 <b>Creator</b>"
+            text += "\n\n👑 <b>Creator</b>"
             text += "\n └{}\n".format(name)
 
             if custom_title:
@@ -628,7 +628,7 @@ def adminlist(update, context):
 
 
 __help__ = """
-❍ /admins*:* Cek daftar admin di grup anda
+❍ /staff*:* Cek daftar admin di grup anda
 
 *Admins only:*
  ❍ /pin*:* Menyematkan pesan yang dibalas tanpa notif- tambahkan 'loud' atau 'notify' untuk memberikan notifikasi kepada anggota grup
@@ -649,7 +649,7 @@ __help__ = """
  
 """
 
-ADMINLIST_HANDLER = DisableAbleCommandHandler("admins", adminlist)
+ADMINLIST_HANDLER = DisableAbleCommandHandler("staff", adminlist)
 
 PIN_HANDLER = CommandHandler("pin", pin, filters=Filters.group)
 UNPIN_HANDLER = CommandHandler("unpin", unpin, filters=Filters.group)
@@ -694,7 +694,7 @@ dispatcher.add_handler(SETDESC_HANDLER)
 __mod_name__ = "Admin"
 __command_list__ = [
     "adminlist",
-    "admins",
+    "staff",
     "invitelink",
     "promote",
     "demote",
