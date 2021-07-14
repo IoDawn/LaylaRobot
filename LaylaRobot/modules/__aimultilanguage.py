@@ -355,11 +355,10 @@ async def inuka(client, message):
 
 
 __help__ = """
-<b> Chatbot </b>
-BOT AI CAN DETECT & REPLY UPTO 200 LANGUAGES
- - /chatbot [ON/OFF]: Enables and disables AI Chat mode (EXCLUSIVE)
- - /chatbot EN : Enables English only chatbot
- 
+🏷 `/dare` : untuk tantangan acak
+
+*Jika ingin req pertanyaan kirim ke @RosoOwner_bot
+
 """
 
-__mod_name__ = "Chatbot"
+__mod_name__ = "🀄️Dare"
