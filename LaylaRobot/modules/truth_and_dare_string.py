@@ -93,7 +93,7 @@ TRUTH = (
     "Kalau kamu cuma bisa makan satu jenis makanan seumur hidup, mau makan apa?",
     "Siapa orang terakhir yang kamu stalking di media sosial?",
     "Tiga hal apa yang harus gebetan atau pacar kamu punya?",
-    "Rate (nama orang) dari skala 1-10.",
+    "Rate seseorang digrup dari skala 1-10.",
     "musik yang paling tidak kamu sukai?",
     "Siapa celebrity crush kamu?",
     "Skenario paling aneh yang pernah terlintas di pikiranmu tentang kita?",
