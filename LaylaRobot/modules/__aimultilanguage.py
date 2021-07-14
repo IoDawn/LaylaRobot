@@ -361,4 +361,4 @@ __help__ = """
 
 """
 
-__mod_name__ = "🀄️Dare"
+__mod_name__ = "Dare"
