@@ -818,4 +818,4 @@ __help__ = """
 *Jika ingin req pertanyaan kirim ke @RosoOwner_bot
 """
 
-__mod_name__ = "◎Truth"
+__mod_name__ = "Truth"
