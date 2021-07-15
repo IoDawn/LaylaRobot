@@ -539,7 +539,7 @@ def adminlist(update, context):
         )
 
     administrators = bot.getChatAdministrators(chat_id)
-    text = "*STAFF IN* <b>{}</b>:".format(html.escape(update.effective_chat.title))
+    text = "<b>STAFF IN {}</b>:".format(html.escape(update.effective_chat.title))
 
     bot_admin_list = []
 
