@@ -358,7 +358,6 @@ __help__ = """
 ◎ `/dare`: untuk tantangan acak
 
 *Jika ingin req pertanyaan kirim ke @RosoOwner_bot
-
 """
 
 __mod_name__ = "Dare"
