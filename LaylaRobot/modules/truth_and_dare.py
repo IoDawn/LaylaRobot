@@ -25,13 +25,22 @@ def quote(update: Update, context: CallbackContext):
     args = context.args
     update.effective_message.reply_text(random.choice(truth_and_dare_string.QUOTE))
 
+@run_async
+def roso(update: Update, context: CallbackContext):
+    args = context.args
+    update.effective_message.reply_text(random.choice(truth_and_dare_string.TRUTH))
+
 
 TRUTH_HANDLER = DisableAbleCommandHandler("truth", truth)
 TRUTH_REGEX_HANDLER = DisableAbleMessageHandler(
-    Filters.regex(r"^(?i)truth(.*)$"), truth, friendly="truth"
-)
 DARE_HANDLER = DisableAbleCommandHandler("dare", dare)
 QUOTE_HANDLER = DisableAbleCommandHandler("quote", quote)
+    Filters.regex(r"^(?i)quotes(.*)$"), quote, friendly="quote"
+)
+ROSO_HANDLER = DisableAbleCommandHandler("roso", roso)
+ROSO_REGEX_HANDLER = DisableAbleMessageHandler(
+    Filters.regex(r"^(?i)roso(.*)$"), roso, friendly="roso"
+)
 
 
 dispatcher.add_handler(TRUTH_HANDLER)
