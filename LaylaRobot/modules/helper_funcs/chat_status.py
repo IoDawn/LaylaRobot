@@ -199,10 +199,11 @@ def user_admin(func):
             except:
                 pass
         else:
-            client.answer_callback_query(
-                text="you are not admin here❗",
-                show_alert=True,
-            )
+            with suppress(MessageNotModified):
+                await query.message.edit_text(
+                    msg, disable_web_page_preview=True, reply_markup=button
+                )
+                await query.answer("you are not admin here❕")
 
     return is_admin
 
