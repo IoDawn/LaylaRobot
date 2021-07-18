@@ -3,7 +3,10 @@ import random
 import LaylaRobot.modules.truth_and_dare_string as truth_and_dare_string
 from LaylaRobot import dispatcher
 from telegram import ParseMode, Update, Bot
-from LaylaRobot.modules.disable import DisableAbleCommandHandler
+from LaylaRobot.modules.disable import (
+    DisableAbleCommandHandler,
+    DisableAbleMessageHandler,
+)
 from telegram.ext import CallbackContext, run_async
 
 @run_async
@@ -23,7 +26,7 @@ def quote(update: Update, context: CallbackContext):
 
 
 TRUTH_HANDLER = DisableAbleCommandHandler("truth", truth)
-TRUTH_REGEX_HANDLER = DisableAbleCommandHandler(
+TRUTH_REGEX_HANDLER = DisableAbleMessageHandler(
     Filters.regex(r"^(?i)truth(.*)$"), truth, friendly="truth"
 )
 DARE_HANDLER = DisableAbleCommandHandler("dare", dare)
@@ -34,7 +37,3 @@ dispatcher.add_handler(TRUTH_HANDLER)
 dispatcher.add_handler(TRUTH_REGEX_HANDLER)
 dispatcher.add_handler(DARE_HANDLER)
 dispatcher.add_handler(QUOTE_HANDLER)
-
-__handlers__ = [
-    (TRUTH_REGEX_HANDLER),
-]
