@@ -23,7 +23,7 @@ def quote(update: Update, context: CallbackContext):
 
 
 TRUTH_HANDLER = DisableAbleCommandHandler("truth", truth)
-TRUTH_REGEX_HANDLER = DisableAbleMessageHandler(
+TRUTH_REGEX_HANDLER = DisableAbleCommandHandler(
     Filters.regex(r"^(?i)truth(.*)$"), truth, friendly="truth"
 )
 DARE_HANDLER = DisableAbleCommandHandler("dare", dare)
