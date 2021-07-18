@@ -409,6 +409,7 @@ def Source_about_callback(update, context):
 
 
 @run_async
+@user_admin
 def tutup_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "tutup_":
@@ -424,6 +425,7 @@ def tutup_about_callback(update: Update, context: CallbackContext):
 
 
 @run_async
+@user_admin
 def get_help(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
     args = update.effective_message.text.split(None, 1)
