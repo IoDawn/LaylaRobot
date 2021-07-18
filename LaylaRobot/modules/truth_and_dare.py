@@ -35,3 +35,6 @@ dispatcher.add_handler(TRUTH_REGEX_HANDLER)
 dispatcher.add_handler(DARE_HANDLER)
 dispatcher.add_handler(QUOTE_HANDLER)
 
+__handlers__ = [
+    (TRUTH_REGEX_HANDLER),
+]
