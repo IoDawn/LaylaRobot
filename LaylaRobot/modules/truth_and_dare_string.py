@@ -234,4 +234,3 @@ ROSO = (
     "hmm?",
     "dalem syg",
 )
-    
