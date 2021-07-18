@@ -218,4 +218,20 @@ QUOTE = (
     "Pilihan tergantung dari pemikiran anda untuk mencari 'kebenaran' atau 'pembenaran'.",
     "Sembunyikanlah kebaikan yang kamu lakukan, dan buatlah kebaikan yang telah kamu lakukan itu dikenal (Ali Bin Abi Thalib)",
     "Terkadang saya heran mengapa mereka bangga membicarakan keburukannya sendiri, padahal Tuhan telah menutupinya (bedakan antara munafik dengan mengumbar aib)",
+
 )
+
+ROSO = (
+    "naon si",
+    "napa om",
+    "hadirrr",
+    "Roso is online!",
+    "ada yg bisa dibanting?",
+    "apa beb",
+    "paansi manggil"",
+    "ada apa nih?",
+    "y",
+    "hmm?",
+    "dalem syg",
+)
+    
