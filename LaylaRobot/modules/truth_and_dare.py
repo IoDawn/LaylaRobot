@@ -23,11 +23,15 @@ def quote(update: Update, context: CallbackContext):
 
 
 TRUTH_HANDLER = DisableAbleCommandHandler("truth", truth)
+TRUTH_REGEX_HANDLER = DisableAbleMessageHandler(
+    Filters.regex(r"^(?i)truth(.*)$"), truth, friendly="truth"
+)
 DARE_HANDLER = DisableAbleCommandHandler("dare", dare)
 QUOTE_HANDLER = DisableAbleCommandHandler("quote", quote)
 
 
 dispatcher.add_handler(TRUTH_HANDLER)
+dispatcher.add_handler(TRUTH_REGEX_HANDLER)
 dispatcher.add_handler(DARE_HANDLER)
 dispatcher.add_handler(QUOTE_HANDLER)
 
