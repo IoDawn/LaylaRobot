@@ -228,9 +228,10 @@ ROSO = (
     "Roso is online!",
     "ada yg bisa dibanting?",
     "apa beb",
-    "paansi manggil"",
+    "paansi manggil²",
     "ada apa nih?",
     "y",
     "hmm?",
     "dalem syg",
+    "kita kenal?",
 )
