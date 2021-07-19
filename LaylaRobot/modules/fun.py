@@ -372,10 +372,8 @@ dispatcher.add_handler(RLG_HANDLER)
 dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(EIGHTBALL_HANDLER)
 dispatcher.add_handler(TABLE_HANDLER)
-dispatcher.add_handler(GDMORNING_HANDLER)
-dispatcher.add_handler(GDNIGHT_HANDLER)
 
-__mod_name__ = "Memes"
+__mod_name__ = "Meme"
 __command_list__ = [
     "runs",
     "slap",
@@ -407,6 +405,4 @@ __handlers__ = [
     SHOUT_HANDLER,
     WEEBIFY_HANDLER,
     EIGHTBALL_HANDLER,
-    GDMORNING_HANDLER,
-    GDNIGHT_HANDLER,
 ]
