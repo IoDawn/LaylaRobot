@@ -199,9 +199,9 @@ def user_admin(func):
             except:
                 pass
         else:
-            client.answer_callback_query(
-                text="you are not admin here❗",
-                show_alert=True,
+            update.effective_message.reply_text(
+                "Who dis non-admin telling me what to do? You want a punch?"
+            )
 
     return is_admin
 
