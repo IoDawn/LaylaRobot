@@ -204,8 +204,6 @@ def user_admin(func):
                 text="you are not admin here❗",
                 show_alert=True,
 
-    return is_admin
-
 
 def user_admin_no_reply(func):
     @wraps(func)
