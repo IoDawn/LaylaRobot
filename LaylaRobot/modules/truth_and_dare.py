@@ -34,9 +34,6 @@ def roso(update: Update, context: CallbackContext):
 TRUTH_HANDLER = DisableAbleCommandHandler("truth", truth)
 DARE_HANDLER = DisableAbleCommandHandler("dare", dare)
 QUOTE_HANDLER = DisableAbleCommandHandler("quote", quote)
-QUOTE_REGEX_HANDLER = DisableAbleMessageHandler(
-    Filters.regex(r"^(?i)quotes(.*)$"), quote, friendly="quote"
-)
 ROSO_HANDLER = DisableAbleCommandHandler("roso", roso)
 ROSO_REGEX_HANDLER = DisableAbleMessageHandler(
     Filters.regex(r"^(?i)roso(.*)$"), roso, friendly="roso"
@@ -46,6 +43,5 @@ ROSO_REGEX_HANDLER = DisableAbleMessageHandler(
 dispatcher.add_handler(TRUTH_HANDLER)
 dispatcher.add_handler(DARE_HANDLER)
 dispatcher.add_handler(QUOTE_HANDLER)
-dispatcher.add_handler(QUOTE_REGEX_HANDLER)
 dispatcher.add_handler(ROSO_HANDLER)
 dispatcher.add_handler(ROSO_REGEX_HANDLER)
