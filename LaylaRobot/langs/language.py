@@ -20,9 +20,9 @@ class Language:
 
     def reload_strings(self) -> None:
         for filename in os.listdir(r"./LaylaRobot/langs"):
-            if filename.endswith(".yaml"):
+            if filename.endswith
                 language_name = filename[:-5]
-                self.languages[language_name] = yaml.safe_load(
+                self.languages[language_name] = safe_load(
                     open(r"./LaylaRobot/langs/" + filename, encoding="utf8")
                 )
 
