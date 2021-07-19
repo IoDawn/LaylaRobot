@@ -199,8 +199,10 @@ def user_admin(func):
             except:
                 pass
         else:
-            with suppress(MessageNotModified):
-                await query.answer("you are not admin here❕")
+            client.answer_callback_query(
+                cb.id,
+                text="you are not admin here❗",
+                show_alert=True,
 
     return is_admin
 
