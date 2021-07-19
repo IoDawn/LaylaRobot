@@ -200,9 +200,6 @@ def user_admin(func):
                 pass
         else:
             with suppress(MessageNotModified):
-                await query.message.edit_text(
-                    msg, disable_web_page_preview=True, reply_markup=button
-                )
                 await query.answer("you are not admin here❕")
 
     return is_admin
