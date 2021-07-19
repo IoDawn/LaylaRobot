@@ -203,6 +203,7 @@ def user_admin(func):
                 cb.id,
                 text="you are not admin here❗",
                 show_alert=True,
+            )
 
 
 def user_admin_no_reply(func):
