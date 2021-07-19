@@ -2,7 +2,6 @@ from math import ceil
 from typing import Dict, List
 
 from LaylaRobot import NO_LOAD
-import LaylaRobot.modules.__main__ as __main__
 from telegram import MAX_MESSAGE_LENGTH, Bot, InlineKeyboardButton, ParseMode
 from telegram.error import TelegramError
 
@@ -67,9 +66,9 @@ def paginate_modules(page_n: int, module_dict: Dict, prefix, chat=None) -> List:
     # can only have a certain amount of buttons side by side
     if len(pairs) > 6:
         pairs = pairs[modulo_page * 6:6 * (modulo_page + 1)] + [
-            (EqInlineKeyboardButton("🔐Lock", callback_data="tutup_)),
-                EqInlineKeyboardButton("↔️", callback_data="{}_prev({})".format(prefix, modulo_page),
-             EqInlineKeyboardButton("Back❌", callback_data="layla_back")))]
+            (EqInlineKeyboardButton("◀️", callback_data="{}_prev({})".format(prefix, modulo_page)),
+                EqInlineKeyboardButton("🔺", callback_data="layla_back"),
+             EqInlineKeyboardButton("▶️", callback_data="{}_next({})".format(prefix, modulo_page)))]
 
     else:
         pairs += [[EqInlineKeyboardButton("Back", callback_data="layla_back")]]
