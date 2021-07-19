@@ -99,7 +99,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-*DAFTAR PENGATURAN*🛠
+*DAFTAR PENGATURAN* ⚒
 """
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
