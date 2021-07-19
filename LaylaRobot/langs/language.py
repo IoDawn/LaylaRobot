@@ -18,14 +18,6 @@ class Language:
                 raise StringNotFound(f"String: ({string}) not found.")
             return en_string
 
-    def reload_strings(self) -> None:
-        for filename in os.listdir(r"./LaylaRobot/langs"):
-            if filename.endswith
-                language_name = filename[:-5]
-                self.languages[language_name] = safe_load(
-                    open(r"./LaylaRobot/langs/" + filename, encoding="utf8")
-                )
-
     def get_languages(self) -> Dict:
         to_return: Dict = {}
         for language in self.languages:
@@ -34,13 +26,6 @@ class Language:
 
     def get_language(self, language: str) -> str:
         return self.languages[language]["language"]
-
-
-class StringNotFound(Exception):
-    """
-    Raised when language string not found for the
-    given key inside english locale.
-    """
 
 
 langs = Language()
