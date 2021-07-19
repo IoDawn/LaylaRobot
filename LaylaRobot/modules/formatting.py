@@ -1,4 +1,3 @@
-from LaylaRobot.modules.helper_funcs.decorators import metacallback
 from telegram import (
     ParseMode,
     Update,
@@ -22,31 +21,12 @@ def fmt_filling_help(update: Update, context: CallbackContext):
     )
 
 
-
-@metacallback(pattern=r"fmt_help_")
-def fmt_help(update: Update, context: CallbackContext):
-    query = update.callback_query
-    bot = context.bot
-    help_info = query.data.split("fmt_help_")[1]
-    if help_info == "md":
-        help_text = gs(update.effective_chat.id, "md_help")
-    elif help_info == "filling":
-        help_text = gs(update.effective_chat.id, "filling_help") 
-    query.message.edit_text(
-        text=help_text,
-        parse_mode=ParseMode.HTML,
-        reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton(text="Back", callback_data=f"help_module({__mod_name__.lower()})")]]
-        ),
-    )
-    bot.answer_callback_query(query.id)
-
 __mod_name__ = 'Formatting'
 
 def get_help(chat):
     return [gs(chat, "formt_help_bse"),
     [
-        InlineKeyboardButton(text="Markdown", callback_data="fmt_help_md"),
-        InlineKeyboardButton(text="Filling", callback_data="fmt_help_filling")
+        InlineKeyboardButton(text="Markdown", callback_data="md_help"),
+        InlineKeyboardButton(text="Filling", callback_data="filling_help")
     ]
 ]
