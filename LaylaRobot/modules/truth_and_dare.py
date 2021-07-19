@@ -31,6 +31,14 @@ def roso(update: Update, context: CallbackContext):
     update.effective_message.reply_text(random.choice(truth_and_dare_string.TRUTH))
 
 
+__help__ = """
+◎ /truth : untuk kejujuran acak
+◎ /dare : untuk tantang acak
+*Jika ingin req pertanyaan kirim ke @RosoOwner_bot
+"""
+
+__mod_name__ = "T&D"
+
 TRUTH_HANDLER = DisableAbleCommandHandler("truth", truth)
 DARE_HANDLER = DisableAbleCommandHandler("dare", dare)
 QUOTE_HANDLER = DisableAbleCommandHandler("quote", quote)
