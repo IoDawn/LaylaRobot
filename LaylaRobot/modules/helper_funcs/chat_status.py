@@ -200,10 +200,8 @@ def user_admin(func):
                 pass
         else:
             client.answer_callback_query(
-                cb.id,
                 text="you are not admin here❗",
                 show_alert=True,
-            )
 
     return is_admin
 
