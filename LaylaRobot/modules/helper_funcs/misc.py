@@ -2,7 +2,7 @@ from math import ceil
 from typing import Dict, List
 
 from LaylaRobot import NO_LOAD
-from LaylaRobot import.__main__ import tutup_
+from LaylaRobot import __main__ import tutup_
 from telegram import MAX_MESSAGE_LENGTH, Bot, InlineKeyboardButton, ParseMode
 from telegram.error import TelegramError
 
