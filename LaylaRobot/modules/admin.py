@@ -2,15 +2,15 @@ import html
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import BadRequest
-from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
-from telegram.utils.helpers import mention_html
 from telegram.ext import (
     CallbackContext,
     CallbackQueryHandler,
     CommandHandler,
     Filters,
     MessageHandler,
+    run_async,
 )
+from telegram.utils.helpers import mention_html
 
 from LaylaRobot.modules import ALL_MODULES
 from LaylaRobot import DRAGONS, dispatcher
