@@ -355,6 +355,7 @@ def layla_about_callback(update, context):
  ☉ Saya dapat membatasi pengguna.
  ☉ Saya dapat menyapa pengguna dengan pesan selamat datang yang dapat disesuaikan dan bahkan menetapkan aturan grup.
  ☉ Saya memiliki sistem anti-banjir(pesan) yang canggih.
+ ☉ Saya dapat melindungi grup anda dari spam pesan forward ga jelas, cek (locks) untuk mengetahui lebih lanjut.
  ☉ Saya dapat memperingatkan pengguna sampai mereka mencapai peringatan maksimal, dengan setiap tindakan yang telah ditentukan seperti ban,mute,kick,dll.
  ☉ Saya memiliki sistem pencatatan(rules), daftar hitam(blacklist), dan bahkan balasan yang telah ditentukan sebelumnya pada kata kunci tertentu(filters).
  ☉ Saya memeriksa izin admin sebelum menjalankan perintah apa pun dan lebih banyak perintah yang lainnya.""",
