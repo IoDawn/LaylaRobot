@@ -185,6 +185,9 @@ __help__ = """
   - /hack 🧑‍💻
   - /love ❣
   - /kill 🏹
+ *Play Game With Questions:*
+  -`/truth`: honesty question
+  -`/dare`: challenge question
  Usage: hahaha just a magic.
  warning: you would be in trouble if you input any other value than mentioned
 """
