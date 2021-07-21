@@ -519,7 +519,7 @@ def __user_info__(user_id):
 __help__ = """
 *Away from group*
  ❍ /afk <reason>*:* mark yourself as AFK(away from keyboard).
- ❍ brb <reason>*:* same as the afk command - but not a command.
+ ❍ off *:* same as the afk command - but not a command.
 When marked as AFK, any mentions will be replied to with a message to say you're not available!
 
 *ID:*
@@ -530,7 +530,7 @@ When marked as AFK, any mentions will be replied to with a message to say you're
  ❍ /setme <text>*:* will set your info
  ❍ /me*:* will get your or another user's info.
 *Examples:* 💡
- ➩ /setme I am a wolf.
+ ➩ /setme I am a Owner.
  ➩ /me @username(defaults to yours if no user specified)
 
 *Information others add on you:* 
@@ -567,7 +567,7 @@ dispatcher.add_handler(GET_BIO_HANDLER)
 dispatcher.add_handler(SET_ABOUT_HANDLER)
 dispatcher.add_handler(GET_ABOUT_HANDLER)
 
-__mod_name__ = "Infos"
+__mod_name__ = "Info's"
 __command_list__ = ["setbio", "bio", "setme", "me", "info"]
 __handlers__ = [
     ID_HANDLER,
