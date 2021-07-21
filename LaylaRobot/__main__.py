@@ -82,7 +82,7 @@ Cek *Plugins* dibawah untuk melihat perintah yang dapat digunakan.
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕Add your to Group➕", url="t.me/RosoManage2_bot?startgroup=true"),
+            text="➕ Add to your Group ➕", url="t.me/RosoManage2_bot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(
@@ -91,7 +91,7 @@ buttons = [
             text="Plugins ⏹", callback_data="help_back"),
     ],
     [  
-        InlineKeyboardButton(text="🔘Other-Bot🔘", callback_data="other_"
+        InlineKeyboardButton(text="🔘 More-Bot 🔘", callback_data="other_"
     ),
     ],
 ]
@@ -99,7 +99,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-*🅁🄾🅂🄾-🄿🄻🅄🄶🄸🄽🅂*
+*Pʟᴜɢɪɴs Lɪsᴛ Oғ Rᴏsᴏ* 📁
 """
 
 DONATE_STRING = """No need i'm rich."""
@@ -303,8 +303,8 @@ def help_button(update, context):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton(text="🔐Lock", callback_data="tutup_"),
-                            InlineKeyboardButton(text="Back❌", callback_data="help_back")],
+                            InlineKeyboardButton(text="🔐", callback_data="tutup_"),
+                            InlineKeyboardButton(text="❌", callback_data="help_back")],
                         ]
                     ),
                 )
@@ -363,7 +363,7 @@ def layla_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Back", callback_data="layla_back")
+                    InlineKeyboardButton(text="⌂", callback_data="layla_back")
                  ]
                 ]
             ),
@@ -410,16 +410,16 @@ def Other_about_callback(update, context):
     query = update.callback_query
     if query.data == "other_":
         query.message.edit_text(
-            text="""Here are some other bots that can help you:
-                 \n✪ Shield*:* bot for protect your group from NSFW senders and Spam.
-✪ Manage*:* similar to this bot with Indonesian language plugins.
-✪ Music*:* bot to play music in your group chat.""",
+            text="""Here are some bots that can help you:
+ ✪ Shield*:* bot for protect your group from NSFW senders and Spam.
+ ✪ Manage*:* similar to this bot with Indonesian language plugins.
+ ✪ Music*:* bot to play music in your group chat.""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="Shield", url="t.me/GalactronBot"),
+                        InlineKeyboardButton(text="Shield", url="t.me/SpamProtectionRobot"),
                         InlineKeyboardButton(text="Manage", url="t.me/RosoManage_bot"),
                         InlineKeyboardButton(text="Music", url="t.me/RosoMusic_bot"),
                     ],
