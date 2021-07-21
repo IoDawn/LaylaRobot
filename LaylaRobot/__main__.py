@@ -82,7 +82,7 @@ Cek *Plugins* dibawah untuk melihat perintah yang dapat digunakan.
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕Tambahkan ke Grup➕", url="t.me/RosoManage2_bot?startgroup=true"),
+            text="➕Add your to Group➕", url="t.me/RosoManage2_bot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(
@@ -91,7 +91,7 @@ buttons = [
             text="Plugins ⏹", callback_data="help_back"),
     ],
     [  
-        InlineKeyboardButton(text="🔘 Other-Bot 🔘", url="t.me/RosoManage_bot"
+        InlineKeyboardButton(text="🔘Other-Bot🔘", callback_data="other_"
     ),
     ],
 ]
@@ -352,12 +352,12 @@ def layla_about_callback(update, context):
     if query.data == "layla_":
         query.message.edit_text(
             text="""Saya *Roso*, bot manajemen grup yang kuat yang dibuat untuk membantu Anda mengelola grup dengan mudah.
- ☉  Saya dapat membatasi pengguna.
- ☉  Saya dapat menyapa pengguna dengan pesan selamat datang yang dapat disesuaikan dan bahkan menetapkan aturan grup.
- ☉  Saya memiliki sistem anti-banjir(pesan) yang canggih.
- ☉  Saya dapat memperingatkan pengguna sampai mereka mencapai peringatan maksimal, dengan setiap tindakan yang telah ditentukan seperti ban,mute,kick,dll.
- ☉  Saya memiliki sistem pencatatan(rules), daftar hitam(blacklist), dan bahkan balasan yang telah ditentukan sebelumnya pada kata kunci tertentu(filters).
- ☉  Saya memeriksa izin admin sebelum menjalankan perintah apa pun dan lebih banyak perintah yang lainnya.""",
+ ☉ Saya dapat membatasi pengguna.
+ ☉ Saya dapat menyapa pengguna dengan pesan selamat datang yang dapat disesuaikan dan bahkan menetapkan aturan grup.
+ ☉ Saya memiliki sistem anti-banjir(pesan) yang canggih.
+ ☉ Saya dapat memperingatkan pengguna sampai mereka mencapai peringatan maksimal, dengan setiap tindakan yang telah ditentukan seperti ban,mute,kick,dll.
+ ☉ Saya memiliki sistem pencatatan(rules), daftar hitam(blacklist), dan bahkan balasan yang telah ditentukan sebelumnya pada kata kunci tertentu(filters).
+ ☉ Saya memeriksa izin admin sebelum menjalankan perintah apa pun dan lebih banyak perintah yang lainnya.""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -396,6 +396,39 @@ def Source_about_callback(update, context):
             ),
         )
     elif query.data == "source_back":
+        query.message.edit_text(
+                PM_START_TEXT,
+                reply_markup=InlineKeyboardMarkup(buttons),
+                parse_mode=ParseMode.MARKDOWN,
+                timeout=60,
+                disable_web_page_preview=False,
+        )
+
+
+@run_async
+def Other_about_callback(update, context):
+    query = update.callback_query
+    if query.data == "other_":
+        query.message.edit_text(
+            text="""Here are some other bots that can help you:
+                 \n✪ Shield*:* bot for protect your group from NSFW senders and Spam.
+✪ Manage*:* similar to this bot with Indonesian language plugins.
+✪ Music*:* bot to play music in your group chat.""",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(text="Shield", url="t.me/GalactronBot"),
+                        InlineKeyboardButton(text="Manage", url="t.me/RosoManage_bot"),
+                        InlineKeyboardButton(text="Music", url="t.me/RosoMusic_bot"),
+                    ],
+                    [   
+                        InlineKeyboardButton(text="⌂", callback_data="other_back")],
+                ]
+            ),
+        )
+    elif query.data == "other_back":
         query.message.edit_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -716,6 +749,7 @@ def main():
 
     about_callback_handler = CallbackQueryHandler(layla_about_callback, pattern=r"layla_")
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
+    other_callback_handler = CallbackQueryHandler(Other_about_callback, pattern=r"other_")
     tutup_callback_handler = CallbackQueryHandler(tutup_about_callback, pattern=r"tutup_")
 
     donate_handler = CommandHandler("donate", donate)
@@ -726,6 +760,7 @@ def main():
     dispatcher.add_handler(help_handler)
     dispatcher.add_handler(about_callback_handler)
     dispatcher.add_handler(source_callback_handler)
+    dispatcher.add_handler(other_callback_handler)
     dispatcher.add_handler(tutup_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
