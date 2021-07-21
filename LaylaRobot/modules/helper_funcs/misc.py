@@ -2,8 +2,17 @@ from math import ceil
 from typing import Dict, List
 
 from LaylaRobot import NO_LOAD
-from telegram import MAX_MESSAGE_LENGTH, Bot, InlineKeyboardButton, ParseMode
+from LaylaRobot.modules import ALL_MODULES
+from telegram import MAX_MESSAGE_LENGTH, Bot, InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import TelegramError
+from telegram.ext.dispatcher import run_async
+from telegram.ext import (
+    CallbackContext,
+    CallbackQueryHandler,
+    CommandHandler,
+    Filters,
+    MessageHandler,
+)
 
 
 class EqInlineKeyboardButton(InlineKeyboardButton):
@@ -67,7 +76,7 @@ def paginate_modules(page_n: int, module_dict: Dict, prefix, chat=None) -> List:
     if len(pairs) > 7:
         pairs = pairs[modulo_page * 6:6 * (modulo_page + 1)] + [
             (EqInlineKeyboardButton("◁", callback_data="{}_prev({})".format(prefix, modulo_page)),
-                EqInlineKeyboardButton("⌂", callback_data="layla_back"),
+                EqInlineKeyboardButton("⌂", callback_data="tutup_"),
              EqInlineKeyboardButton("▷", callback_data="{}_next({})".format(prefix, modulo_page)))]
 
     else:
@@ -130,3 +139,24 @@ def build_keyboard_parser(bot, chat_id, buttons):
 
 def is_module_loaded(name):
     return name not in NO_LOAD
+
+
+@run_async
+def tutup_about_callback(update: Update, context: CallbackContext):
+    query = update.callback_query
+    if query.data == "tutup_":
+        query.message.edit_text(
+            text=f"*Menu Closed*🔐"
+            f"",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Open", callback_data="help_back")]]
+            ),
+        )
+
+
+    tutup_callback_handler = CallbackQueryHandler(tutup_about_callback, pattern=r"tutup_")
+
+
+    dispatcher.add_handler(tutup_callback_handler)
