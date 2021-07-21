@@ -99,13 +99,10 @@ buttons = [
 
 
 HELP_STRINGS = """
-*DAFTAR PENGATURAN* ⚒
+*🅁🄾🅂🄾-🄿🄻🅄🄶🄸🄽🅂*
 """
 
-DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project [Hero](t.me/HEROGAMERS1) \
- Supporting isnt always financial! [AwesomeSupport](t.me/LaylaList) \
- Those who cannot provide monetary support are welcome to help us develop the bot at ."""
+DONATE_STRING = """No need i'm rich."""
 
 IMPORTED = {}
 MIGRATEABLE = []
