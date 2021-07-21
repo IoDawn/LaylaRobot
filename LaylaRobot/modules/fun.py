@@ -357,10 +357,6 @@ EIGHTBALL_HANDLER = DisableAbleCommandHandler("8ball", eightball)
 TABLE_HANDLER = DisableAbleCommandHandler("table", table)
 SHOUT_HANDLER = DisableAbleCommandHandler("shout", shout)
 WEEBIFY_HANDLER = DisableAbleCommandHandler("weebify", weebify)
-ROSO_HANDLER = DisableAbleCommandHandler("roso", roso)
-ROSO_REGEX_HANDLER = DisableAbleMessageHandler(
-    Filters.regex(r"^(?i)roso(.*)$"), roso, friendly="roso"
-)
 
 dispatcher.add_handler(WEEBIFY_HANDLER)
 dispatcher.add_handler(SHOUT_HANDLER)
