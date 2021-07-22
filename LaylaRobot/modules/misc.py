@@ -82,31 +82,35 @@ def markdown_help(update: Update, context: CallbackContext):
 
 
 __help__ = """
-*Available commands:*
+*Perintah yang tersedia:*
 *Markdown:*
- ❍ /markdownhelp*:* quick summary of how markdown works in telegram - can only be called in private chats
+ ❍ /markdownhelp*:* ringkasan singkat tentang cara kerja penurunan harga di telegram - hanya dapat dipanggil dalam obrolan pribadi
 *Paste:*
- ❍ /paste*:* Saves replied content to `nekobin.com` and replies with a url
+ ❍ /paste*:* Menyimpan konten yang dibalas ke `nekobin.com` dan membalas dengan url
 *React:*
- ❍ /react*:* Reacts with a random reaction 
+ ❍ /react*:* Bereaksi dengan reaksi acak 
+*Text to Speach*:
+ ❍ /tts*:* Ubah teks menjadi rekaman suara
+Contoh: `/tts id|halo roso disini` 
+(id: kode bhs Indonesia)
 *Urban Dictonary:*
- ❍ /ud <word>*:* Type the word or expression you want to search use
+ ❍ /ud <word>*:* Ketik kata atau ekspresi yang ingin Anda cari gunakan
 *Wikipedia:*
- ❍ /wiki <query>*:* wikipedia your query
+ ❍ /wiki <query>*:* wikipedia permintaan Anda
 *Wallpapers:*
- ❍ /wall <query>*:* get a wallpaper from wall.alphacoders.com
+ ❍ /wall <query>*:* Dapatkan wallpaper dari`wall.alphacoders.com`
 *live cricket score*
- ❍ /cs*:* Latest live scores from cricinfo
+ ❍ /cs*:* Skor langsung terbaru dari cricket info
 *Currency converter:* 
- ❍ /cash*:* currency converter
-Example:
+ ❍ /cash*:* Pengonversi mata uang
+Contoh:
  `/cash 1 USD INR`  
       _OR_
  `/cash 1 usd inr`
 Output: `1.0 USD = 75.505 INR`
 
 *MATHS*
-Solves complex math problems using https://newton.now.sh
+Memecahkan masalah matematika yang kompleks menggunakan https://newton.now.sh
 ❍ /math*:* Math `/math 2^2+2(2)`
 ❍ /factor*:* Factor `/factor x^2 + 2x`
 ❍ /derive*:* Derive `/derive x^2+2x`
@@ -123,11 +127,11 @@ Solves complex math problems using https://newton.now.sh
 ❍ /abs*:* Absolute Value `/abs -1`
 ❍ /log*:* Logarithm `/log 2l8`
 
-_Keep in mind_: To find the tangent line of a function at a certain x value, send the request as c|f(x) where c is the given x value and f(x) is the function expression, the separator is a vertical bar '|'. See the table above for an example request.
-To find the area under a function, send the request as c:d|f(x) where c is the starting x value, d is the ending x value, and f(x) is the function under which you want the curve between the two x values.
-To compute fractions, enter expressions as numerator(over)denominator. For example, to process 2/4 you must send in your expression as 2(over)4. The result expression will be in standard math notation (1/2, 3/4).
+_Perlu di ingat_: Untuk menemukan garis singgung suatu fungsi pada nilai x tertentu, kirim permintaan sebagai c | f (x) di mana c adalah nilai x yang diberikan dan f (x) adalah ekspresi fungsi, pemisahnya vertikal bar '|'. Lihat tabel di atas untuk contoh permintaan.
+Untuk mencari luas di bawah suatu fungsi, kirim permintaan sebagai c: d | f (x) di mana c adalah nilai x awal, d adalah nilai akhir x, dan f (x) adalah fungsi di mana Anda ingin kurva antara dua nilai x.
+Untuk menghitung pecahan, masukkan ekspresi sebagai penyebut pembilang (di atas). Misalnya, untuk memproses 2/4 Anda harus mengirimkan ekspresi Anda sebagai 2 (di atas) 4. Ekspresi hasilnya akan dalam notasi matematika standar (1/2, 3/4).
 
-💡`Read From Top`
+💡`Baca dari atas`
 """
 
 ECHO_HANDLER = DisableAbleCommandHandler("echo", echo, filters=Filters.group)
