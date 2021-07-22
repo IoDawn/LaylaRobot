@@ -64,14 +64,14 @@ def send_rules(update, chat_id, from_pm=False):
                         )
                     ],
                     [   
-                        InlineKeyboardButton(text="👥 Lihat disini",callback_data="get_rules")],   
+                        InlineKeyboardButton(text="👥 Lihat disini",callback_data="sql.get_rules(chat_id)")],   
                 ]
             ),
         )
     else:
         update.effective_message.reply_text(
-            "The group admins haven't set any rules for this chat yet. "
-            "This probably doesn't mean it's lawless though...!"
+            "Admin grup belum menetapkan aturan apa pun untuk obrolan ini. "
+            "Ini mungkin tidak berarti itu melanggar hukum...!",
         )
 
 
