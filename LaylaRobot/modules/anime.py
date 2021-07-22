@@ -553,17 +553,17 @@ def kayo(update: Update, context: CallbackContext):
 
 
 __help__ = """
-Get information about anime, manga or characters from [AniList](anilist.co).
-*Available commands:*
- • `/anime <anime>`*:* returns information about the anime.
- • `/character <character>`*:* returns information about the character.
- • `/manga <manga>`*:* returns information about the manga.
- • `/user <user>`*:* returns information about a MyAnimeList user.
- • `/upcoming`*:* returns a list of new anime in the upcoming seasons.
- • `/kaizoku <anime>`*:* search an anime on animekaizoku.com
- • `/kayo <anime>`*:* search an anime on animekayo.com
- • `/airing <anime>`*:* returns anime airing info.
- • /whatanime - reply to gif or video
+Dapatkan informasi tentang anime, manga, atau karakter dari AniList.
+
+*Perintah yang tersedia:*
+ • /anime <anime>: mengembalikan informasi tentang anime.
+ • /character <karakter>: mengembalikan informasi tentang karakter tersebut.
+ • /manga <manga>: mengembalikan informasi tentang manga.
+ • /user <user>: mengembalikan informasi tentang pengguna MyAnimeList.
+ • /upcoming: mengembalikan daftar anime baru di musim yang akan datang.
+ • /kaizoku <anime>: cari anime di animekaizoku.com
+ • /kayo <anime>: cari anime di animekayo.com
+ • /airing <anime>: mengembalikan info penayangan anime.
  """
 
 ANIME_HANDLER = DisableAbleCommandHandler("anime", anime)
