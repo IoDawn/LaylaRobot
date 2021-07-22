@@ -267,7 +267,7 @@ async def apk(e):
             + app_link
             + "'>View in Play Store</a>"
         )
-        app_details += "\n\n===> @AwesomeSupport <==="
+        app_details += "\n\n===> @arunasupportbot <==="
         await e.reply(app_details, link_preview=True, parse_mode="HTML")
     except IndexError:
         await e.reply("No result found in search. Please enter **Valid app name**")
@@ -275,16 +275,17 @@ async def apk(e):
         await e.reply("Exception Occured:- " + str(err))
 
 
-__mod_name__ = "◎Search"
+__mod_name__ = "Google"
 
 __help__ = """
- ❍ /google <text>*:* Perform a google search
- ❍ /img <text>*:* Search Google for images and returns them\nFor greater no. of results specify lim, For eg: `/img hello lim=10`
- ❍ /app <appname>*:* Searches for an app in Play Store and returns its details.
+ ❍ /google <teks>*:* Lakukan pencarian google
+ ❍ /img <teks>*:*  Menelusuri gambar di Google dan mengembalikannya.
+Untuk tidak lebih besar dari hasil tentukan lim, Misalnya: `/img hello lim=3`
+ ❍ /app <aplikasi>*:* Searches for an app in Play Store and returns its details.
  ❍ /reverse: Does a reverse image search of the media which it was replied to.
- ❍ /quote: find inspiration from wise words
- ❍ /gps <location>*:* Get gps location.
- ❍ /github <username>*:* Get information about a GitHub user.
- ❍ /country <country name>*:* Gathering info about given country
- ❍ /imdb <Movie name>*:* Get full info about a movie with imdb.com
+ ❍ /quote: temukan inspirasi dari kata-kata bijak
+ ❍ /gps <lokasi>*:* Dapatkan lokasi gps.
+ ❍ /github <username>*:* Dapatkan informasi tentang pengguna GitHub.
+ ❍ /country <nama negara>*:* Mengumpulkan info tentang negara tertentu
+ ❍ /imdb <judul film>*:* Dapatkan info lengkap tentang film dengan imdb.com
 """
