@@ -55,7 +55,7 @@ def send_rules(update, chat_id, from_pm=False):
         )
     elif rules:
         update.effective_message.reply_text(
-            "Dimana anda ingin melihat Peraturan grup?.",
+            "Dimana anda ingin melihat peraturan grup?",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
