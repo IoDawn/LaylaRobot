@@ -36,7 +36,7 @@ async def couple(_, message):
                 if not i.user.is_bot:
                     list_of_users.append(i.user.id)
             if len(list_of_users) < 2:
-                await message.reply_text("Tidak cukup pengguna")
+                await message.reply_text("Tidak cukup anggota untuk dijodohkan")
                 return
             c1_id = random.choice(list_of_users)
             c2_id = random.choice(list_of_users)
@@ -45,7 +45,7 @@ async def couple(_, message):
             c1_mention = (await app.get_users(c1_id)).mention
             c2_mention = (await app.get_users(c2_id)).mention
 
-            couple_selection_message = f"""**Pasangan hari ini:**
+            couple_selection_message = f"""**Pasangan hari ini telah dipilih:**
 {c1_mention} + {c2_mention} = ❤️
 Pasangan baru berikutnya dapat dipilih pada jam 12Am {tomorrow}"""
             await app.send_message(
@@ -63,7 +63,7 @@ Pasangan baru berikutnya dapat dipilih pada jam 12Am {tomorrow}"""
             c2_id = int(is_selected['c2_id'])
             c1_name = (await app.get_users(c1_id)).first_name
             c2_name = (await app.get_users(c2_id)).first_name
-            couple_selection_message = f"""Couple of the day:
+            couple_selection_message = f"""Pasangan hari ini:
 [{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = ❤️
 Pasangan baru berikutnya dapat dipilih pada jam 12Am {tomorrow}__"""
             await app.send_message(
