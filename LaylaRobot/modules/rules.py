@@ -41,7 +41,7 @@ def send_rules(update, chat_id, from_pm=False):
             raise
 
     rules = sql.get_rules(chat_id)
-    text = f"The rules for *{escape_markdown(chat.title)}* are:\n\n{rules}"
+    text = f"Rules Grup *{escape_markdown(chat.title)}*:\n\n{rules}"
 
     if from_pm and rules:
         bot.send_message(
@@ -50,19 +50,21 @@ def send_rules(update, chat_id, from_pm=False):
     elif from_pm:
         bot.send_message(
             user.id,
-            "The group admins haven't set any rules for this chat yet. "
-            "This probably doesn't mean it's lawless though...!",
+            "Admin grup belum menetapkan aturan apa pun untuk obrolan ini. "
+            "Ini mungkin tidak berarti itu melanggar hukum...!",
         )
     elif rules:
         update.effective_message.reply_text(
-            "Please click the button below to see the rules.",
+            "Dimana anda ingin melihat Peraturan grup?.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="Rules", url=f"t.me/{bot.username}?start={chat_id}"
+                            text="👤 Lihat di pesan pribadi", url=f"t.me/{bot.username}?start={chat_id}"
                         )
-                    ]
+                    ],
+                    [   
+                        InlineKeyboardButton(text="👥 Lihat disini",callback_data="get_rules")],   
                 ]
             ),
         )
@@ -118,11 +120,11 @@ def __chat_settings__(chat_id, user_id):
 
 
 __help__ = """
- ❍ /rules*:* get the rules for this chat.
+ ❍ /rules*:* lihat peraturan untuk obrolan ini.
 
-*Admins only:*
- ❍ /setrules <your rules here>*:* set the rules for this chat.
- ❍ /clearrules*:* clear the rules for this chat.
+*Khusus Admin grup:*
+ ❍ /setrules <tetapkan rules>*:* tetapkan peraturan untuk obrolan ini.
+ ❍ /clearrules*:* hapus peraturan untuk obrolan ini.
 """
 
 __mod_name__ = "Rules"
