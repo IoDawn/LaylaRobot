@@ -1,13 +1,15 @@
-__mod_name__ = "✙Tools"
+__mod_name__ = "❏Extra"
 
 __help__ = """
 *Fake Info*
- ❍ /fakegen*:* Generates Fake Information
- ❍ /picgen*:* Generate a fake pic 
+ ❍ /fakegen*:* Menghasilkan Informasi Palsu
+ ❍ /picgen*:* Buat foto palsu
 
 *Converts*
- ❍ /encrypt*:* Encrypts The Given Text
- ❍ /decrypt*:* Decrypts Previously Ecrypted Text
- ❍ /zip*:* reply to a telegram file to compress it in .zip format
- ❍ /unzip*:* reply to a telegram file to decompress it from the .zip format
+ ❍ /encrypt*:* Mengenkripsi Teks yang diberikan
+contoh: `/encrypt My name is Roso!`
+ ❍ /decrypt*:* Mendekripsi Teks Terenkripsi sebelumnya
+contoh: `/decrypt 3NPCqBuPyHP8DHD/`
+ ❍ /zip*:* balas ke file telegram untuk mengompresnya dalam format .zip
+ ❍ /unzip*:* balas ke file telegram untuk mendekompresnya dari format .zip
 """
