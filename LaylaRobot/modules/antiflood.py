@@ -401,28 +401,27 @@ def __chat_settings__(chat_id, user_id):
 
 
 __help__ = """
+❍*Pembersih teks biru* menghapus semua perintah buatan yang dikirim orang-orang di obrolan Anda.
+ • /cleanblue <on/off>: menghapus perintah setelah dikirim
+ • /ignoreblue <kata>: mencegah pembersihan otomatis perintah
+ • /unignoreblue <kata>: menghapus mencegah pembersihan otomatis dari perintah
+ • /listblue: daftar perintah yang saat ini masuk daftar putih
 
-*Blue text cleaner* removed any made up commands that people send in your chat.
- ❍ /cleanblue <on/off/yes/no>*:* clean commands after sending
- ❍ /ignoreblue <word>*:* prevent auto cleaning of the command
- ❍ /unignoreblue <word>*:* remove prevent auto cleaning of the command
- ❍ /listblue*:* list currently whitelisted commands
+❍*Antiflood*(anti banjir) memungkinkan Anda untuk mengambil tindakan pada pengguna yang mengirim lebih dari x pesan berturut-turut. Melebihi kumpulan banjir akan mengakibatkan membatasi pengguna tersebut.
+ Ini akan membisukan pengguna jika mereka mengirim lebih dari 10 pesan berturut-turut, bot diabaikan.
+ • /flood: Dapatkan pengaturan pengendalian banjir saat ini
+❍*Khusus Admin grup:*
+ • /setflood <int/'no' 'off'>: mengaktifkan atau menonaktifkan pengendalian banjir
+ _Contoh:_ `/setflood 10`
+ • /setfloodmode <ban/kick/mute/tban/tmute> <nilai>: Tindakan yang dilakukan ketika pengguna telah melampaui batas banjir. ban/kick/mute/tmute/tban
 
-*Antiflood* allows you to take action on users that send more than x messages in a row. Exceeding the set flood \
-will result in restricting that user.
- This will mute users if they send more than 10 messages in a row, bots are ignored.
- ❍ /flood*:* Get the current flood control setting
-• *Admins only:*
- ❍ /setflood <int/'no'/'off'>*:* enables or disables flood control
- *Example:* `/setflood 10`
- ❍ /setfloodmode <ban/kick/mute/tban/tmute> <value>*:* Action to perform when user have exceeded flood limit. ban/kick/mute/tmute/tban
-• *Note:*
- • Value must be filled for tban and tmute!!
- It can be:
- `5m` = 5 minutes
- `6h` = 6 hours
- `3d` = 3 days
- `1w` = 1 week
+❍*Catatan:*
+• Nilai harus diisi untuk tban dan tmute !!
+  Bisa jadi:
+  5m = 5 menit
+  6h = 6 jam
+  3d = 3 hari
+  1w = 1 minggu
  """
 
 __mod_name__ = "Control"
