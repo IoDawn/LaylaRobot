@@ -302,12 +302,12 @@ def help_button(update, context):
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
                     [
-                        [
-                            InlineKeyboardButton(text="🔐", callback_data="tutup_"),
-                            InlineKeyboardButton(text="❌", callback_data="help_back")],
-                        ]
-                    ),
-                )
+                     [
+                        InlineKeyboardButton(text="✕", callback_data="help_back")
+                     ]
+                    ]
+                ),
+            )
 
         elif prev_match:
             curr_page = int(prev_match.group(1))
@@ -357,7 +357,7 @@ def layla_about_callback(update, context):
  ☉ Saya memiliki sistem anti-banjir(pesan) yang canggih.
  ☉ Saya dapat melindungi grup anda dari spam pesan forward ga jelas, cek (locks) untuk mengetahui lebih lanjut.
  ☉ Saya dapat memperingatkan pengguna sampai mereka mencapai peringatan maksimal, dengan setiap tindakan yang telah ditentukan seperti ban,mute,kick,dll.
- ☉ Saya memiliki sistem pencatatan(rules), daftar hitam(blacklist), dan bahkan balasan yang telah ditentukan sebelumnya pada kata kunci tertentu(filters).
+ ☉ Saya memiliki sistem pencatatan(notes), daftar hitam(blacklist), dan bahkan balasan yang telah ditentukan sebelumnya pada kata kunci tertentu(filters).
  ☉ Saya memeriksa izin admin sebelum menjalankan perintah apa pun dan lebih banyak perintah yang lainnya.""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
