@@ -4,15 +4,13 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Upda
 from telegram.utils.helpers import escape_markdown
 
 
-ADMIN: |
-Here is the help for the Admin module:
-
-❍ /staff: Cek daftar admin di grup anda
-
-Admins only:
- ❍ /pin: Menyematkan pesan yang dibalas tanpa notif- tambahkan 'loud' atau 'notify' untuk memberikan notifikasi kepada anggota grup
- ❍ /unpin: Melepas pin pesan yang saat ini disematkan
- ❍ /invitelink: Dapatkan tautan grup
+ADMIN = (
+    "Here is the help for the Admin module:",
+    f"❍ /staff: Cek daftar admin di grup anda",
+    f"\n*Admins only:*",
+    f"❍ /pin: Menyematkan pesan yang dibalas tanpa notif- tambahkan 'loud' atau 'notify' untuk memberikan notifikasi kepada anggota grup",
+    f"❍ /unpin: Melepas pin pesan yang saat ini disematkan",
+    ❍ /invitelink: Dapatkan tautan grup
  ❍ /promote: Promote user
  ❍ /demote: Turunkan jabatan user
  ❍ /title <title>: Menetapkan judul khusus untuk admin yang dipromosikan bot
