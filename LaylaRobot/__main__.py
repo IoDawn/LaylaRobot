@@ -773,7 +773,7 @@ def main():
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
     other_callback_handler = CallbackQueryHandler(Other_about_callback, pattern=r"other_")
     tutup_callback_handler = CallbackQueryHandler(tutup_about_callback, pattern=r"tutup_")
-    admin_callback_handler = CallbackQueryHandler(admin_callback, pattern=r"admin_")
+    admin_callback_handler = CallbackQueryHandler(admin, pattern=r"admin_")
 
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
