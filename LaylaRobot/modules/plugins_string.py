@@ -1,5 +1,11 @@
+import html
+
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
+from telegram.utils.helpers import escape_markdown
+
+
 ADMIN = (
-    "Here is the help for the Admin module:
+  """Here is the help for the Admin module:
 
 ❍ /staff: Cek daftar admin di grup anda
 
@@ -18,4 +24,4 @@ Admins only:
  ❍ /setsticker: Balas ke stiker untuk menjadikannya sebagai pack stiker grup!
  ❍ /setdescription <deskripsi>: Tetapkan deskripsi obrolan baru di grup.
  ❍ /zombies: Temukan semua akun mati di grup Anda.
- ❍ /zombies clean: Hapus semua akun mati dari grup Anda.",
+ ❍ /zombies clean: Hapus semua akun mati dari grup Anda.""",
