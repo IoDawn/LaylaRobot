@@ -1,5 +1,5 @@
 ADMIN = (
-    n\Here is the help for the Admin module:
+  """Here is the help for the Admin module:
 
 ❍ /staff: Cek daftar admin di grup anda
 
