@@ -93,7 +93,7 @@ buttons = [
             text="Plugins ⏹", callback_data="help_back"),
     ],
     [  
-        InlineKeyboardButton(text="🔘 More-Bot 🔘", callback_data="other_"
+        InlineKeyboardButton(text="🔘 More-Bot 🔘", callback_data="admin_"
     ),
     ],
 ]
