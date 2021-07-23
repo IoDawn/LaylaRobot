@@ -18,4 +18,4 @@ Admins only:
  ❍ /setsticker: Balas ke stiker untuk menjadikannya sebagai pack stiker grup!
  ❍ /setdescription <deskripsi>: Tetapkan deskripsi obrolan baru di grup.
  ❍ /zombies: Temukan semua akun mati di grup Anda.
- ❍ /zombies clean: Hapus semua akun mati dari grup Anda.""",
+ ❍ /zombies clean: Hapus semua akun mati dari grup Anda.",
