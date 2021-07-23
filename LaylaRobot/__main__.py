@@ -1,6 +1,7 @@
 import importlib
 import time
 import re
+import random
 from sys import argv
 from typing import Optional
 
@@ -458,7 +459,7 @@ def tutup_about_callback(update: Update, context: CallbackContext):
 @run_async
 def admin(update: Update, context: CallbackContext):
     args = context.args
-    update.effective_message.reply_text(plugins_string.ADMIN))
+    update.effective_message.reply_text(random.choice(plugins_string.ADMIN))
     query = update.callback_query
     if query.data == "admin_":
             parse_mode=ParseMode.MARKDOWN,
