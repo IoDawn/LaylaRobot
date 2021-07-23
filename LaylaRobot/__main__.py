@@ -474,7 +474,7 @@ def admin(update: Update, context: CallbackContext):
                         InlineKeyboardButton(text="⌂", callback_data="help_back")],
                 ]
             ),
-        )
+
 @run_async
 def get_help(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
