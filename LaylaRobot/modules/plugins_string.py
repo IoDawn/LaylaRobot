@@ -23,3 +23,4 @@ ADMIN = (
     f"❍ /setdescription <deskripsi>: Tetapkan deskripsi obrolan baru di grup.",
     f"❍ /zombies: Temukan semua akun mati di grup Anda.",
     f"❍ /zombies clean: Hapus semua akun mati dari grup Anda.",
+)
