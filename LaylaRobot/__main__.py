@@ -28,6 +28,7 @@ from LaylaRobot import (
 from LaylaRobot.modules import ALL_MODULES
 from LaylaRobot.modules.helper_funcs.chat_status import is_user_admin
 from LaylaRobot.modules.helper_funcs.misc import paginate_modules
+import LaylaRobot.modules.plugins_string as plugins_string
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -455,6 +456,20 @@ def tutup_about_callback(update: Update, context: CallbackContext):
 
 
 @run_async
+def admin(update: Update, context: CallbackContext):
+    args = context.args
+    update.effective_message.reply_text(plugins_string.ADMIN))
+    query = update.callback_query
+    if query.data == "admin_":
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="back", callback_data="help_back")]]
+            ),
+        )
+
+
+@run_async
 def get_help(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
     args = update.effective_message.text.split(None, 1)
@@ -752,6 +767,7 @@ def main():
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
     other_callback_handler = CallbackQueryHandler(Other_about_callback, pattern=r"other_")
     tutup_callback_handler = CallbackQueryHandler(tutup_about_callback, pattern=r"tutup_")
+    admin_callback_handler = CallbackQueryHandler(admin_callback, pattern=r"admin_")
 
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
@@ -762,6 +778,7 @@ def main():
     dispatcher.add_handler(about_callback_handler)
     dispatcher.add_handler(source_callback_handler)
     dispatcher.add_handler(other_callback_handler)
+    dispatcher.add_handler(admin_callback_handler)
     dispatcher.add_handler(tutup_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
