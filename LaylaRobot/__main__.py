@@ -465,7 +465,14 @@ def admin(update: Update, context: CallbackContext):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="back", callback_data="help_back")]]
+                [
+                    [
+                        InlineKeyboardButton(text="Shield", url="t.me/SpamProtectionRobot"),
+                        InlineKeyboardButton(text="Manage", url="t.me/RosoManage_bot"),
+                    ],
+                    [   
+                        InlineKeyboardButton(text="⌂", callback_data="help_back")],
+                ]
             ),
         )
 
