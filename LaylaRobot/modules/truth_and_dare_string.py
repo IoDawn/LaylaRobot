@@ -231,6 +231,6 @@ ROSO = (
     "ada apa nih?",
     "y",
     "hmm?",
-    "dalem syg",
+    "ya, roso disini",
     "kita kenal?",
 )
