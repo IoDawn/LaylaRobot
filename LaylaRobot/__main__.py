@@ -1,7 +1,6 @@
 import importlib
 import time
 import re
-import random
 from sys import argv
 from typing import Optional
 
@@ -26,6 +25,7 @@ from LaylaRobot import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
+import LaylaRobot.modules.plugins_admin as plugins_admin
 from LaylaRobot.modules import ALL_MODULES
 from LaylaRobot.modules.helper_funcs.chat_status import is_user_admin
 from LaylaRobot.modules.helper_funcs.misc import paginate_modules
@@ -92,7 +92,7 @@ buttons = [
             text="Plugins ⏹", callback_data="help_back"),
     ],
     [  
-        InlineKeyboardButton(text="🔘 More-Bot 🔘", callback_data="other_"
+        InlineKeyboardButton(text="🔘 More-Bot 🔘", callback_data="admin_"
     ),
     ],
 ]
