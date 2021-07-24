@@ -460,8 +460,9 @@ def plugin_about_callback(update, context):
     query = update.callback_query
     if query.data == "plugin_":
         query.message.edit_text(
-            text=f"*Group helper"
-            f"Managed by [Roso](https://t.me/RosoOwner_bot)",
+            text=f"*Mᴏᴅᴜʟᴇs ᴏғ Rᴏsᴏ*"
+            f"➛ Cmds: `228`"
+            f"➛ Plugins: `59`",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -791,6 +792,7 @@ def main():
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
     other_callback_handler = CallbackQueryHandler(Other_about_callback, pattern=r"other_")
     tutup_callback_handler = CallbackQueryHandler(tutup_about_callback, pattern=r"tutup_")
+    plugin_callback_handler = CallbackQueryHandler(plugin_about_callback, pattern=r"plugin_")
     admin_callback_handler = CallbackQueryHandler(admin_callback, pattern=r"admin_")
 
     donate_handler = CommandHandler("donate", donate)
@@ -803,6 +805,7 @@ def main():
     dispatcher.add_handler(source_callback_handler)
     dispatcher.add_handler(other_callback_handler)
     dispatcher.add_handler(tutup_callback_handler)
+    dispatcher.add_handler(plugin_callback_handler)
     dispatcher.add_handler(admin_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
