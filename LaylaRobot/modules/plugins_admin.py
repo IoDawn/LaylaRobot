@@ -63,7 +63,7 @@ def admin_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="Staff", callback_data="staff_"),
+                        InlineKeyboardButton(text="Staff", callback_data="staf_"),
                     ],
                     [   
                         InlineKeyboardButton(text="back", callback_data="plugin_")],
