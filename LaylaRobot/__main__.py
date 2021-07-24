@@ -25,7 +25,7 @@ from LaylaRobot import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-import LaylaRobot.modules.plugins_admin as plugins_admin
+import LaylaRobot.modules.plugins_admin as admin_callback, admin_callback_handler
 from LaylaRobot.modules import ALL_MODULES
 from LaylaRobot.modules.helper_funcs.chat_status import is_user_admin
 from LaylaRobot.modules.helper_funcs.misc import paginate_modules
