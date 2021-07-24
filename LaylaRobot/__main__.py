@@ -25,7 +25,6 @@ from LaylaRobot import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-import LaylaRobot.modules.plugins_admin as admin_callback, admin_
 from LaylaRobot.modules import ALL_MODULES
 from LaylaRobot.modules.helper_funcs.chat_status import is_user_admin
 from LaylaRobot.modules.helper_funcs.misc import paginate_modules
@@ -92,7 +91,7 @@ buttons = [
             text="Plugins ⏹", callback_data="help_back"),
     ],
     [  
-        InlineKeyboardButton(text="🔘 More-Bot 🔘", callback_data="admin_"
+        InlineKeyboardButton(text="🔘 More-Bot 🔘", callback_data="other_"
     ),
     ],
 ]
@@ -458,9 +457,11 @@ def tutup_about_callback(update: Update, context: CallbackContext):
 def get_help(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
     args = update.effective_message.text.split(None, 1)
+    user = update.effective_user  # type: Optional[User]
 
     # ONLY send help in PM
     if chat.type != chat.PRIVATE:
+        if is_user_admin(chat, user.id):
         if len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
             module = args[1].lower()
             update.effective_message.reply_text(
