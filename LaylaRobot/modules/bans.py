@@ -412,7 +412,7 @@ def selfunban(context: CallbackContext, update: Update) -> str:
 # ❍ /mute <userhandle>*:* silences a user. Can also be used as a reply, muting the replied to user.
 # ❍ /tmute <userhandle> x(m/h/d)*:* mutes a user for x time. (via handle, or reply). `m` = `minutes`, `h` = `hours`, `d` = `days`.
 # ❍ /unmute <userhandle>*:* unmutes a user. Can also be used as a reply, muting the replied to user.
-"""
+#"""
 
 BAN_HANDLER = CommandHandler(["ban", "sban"], ban)
 TEMPBAN_HANDLER = CommandHandler(["tban"], temp_ban)
