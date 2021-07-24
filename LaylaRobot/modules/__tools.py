@@ -1,4 +1,4 @@
-__mod_name__ = "❏Extras"
+__mod_name__ = "❏ Extras"
 
 __help__ = """
 *Fake Info*
