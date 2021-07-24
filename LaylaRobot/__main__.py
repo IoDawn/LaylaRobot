@@ -454,6 +454,45 @@ def tutup_about_callback(update: Update, context: CallbackContext):
             ),
         )
 
+
+@run_async
+def plugin_about_callback(update, context):
+    query = update.callback_query
+    if query.data == "plugin_":
+        query.message.edit_text(
+            text=f"*Group helper"
+            f"Managed by [Roso](https://t.me/RosoOwner_bot)",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(text="⚙ Manage", callback_data="manage_"),
+                    ],
+                    [
+                        InlineKeyboardButton(text="🛃 Admin", callback_data="admin_"),
+                        InlineKeyboardButton(text="🧰 Tools", callback_data="tools_"),
+                    ],
+                    [
+                        InlineKeyboardButton(text="🎮  Funs", callback_data="funs_"),
+                        InlineKeyboardButton(text="🗂 Misc", callback_data="misc_"),
+                    ],
+                    [
+                        InlineKeyboardButton(text="≣", callback_data="help_back"),
+                        InlineKeyboardButton(text="⌂", callback_data="plugin_back"),   
+                        InlineKeyboardButton(text="✕", callback_data="tutup_")],
+                ]
+            ),
+        )
+    elif query.data == "plugin_back":
+        query.message.edit_text(
+                PM_START_TEXT,
+                reply_markup=InlineKeyboardMarkup(buttons),
+                parse_mode=ParseMode.MARKDOWN,
+                timeout=60,
+                disable_web_page_preview=False,
+        )
+
 @run_async
 def get_help(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
