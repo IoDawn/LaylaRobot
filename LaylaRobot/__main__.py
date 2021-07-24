@@ -93,7 +93,7 @@ buttons = [
             text="Plugins ⏹", callback_data="help_back"),
     ],
     [  
-        InlineKeyboardButton(text="🔘 More-Bot 🔘", callback_data="admin_"
+        InlineKeyboardButton(text="🔘 More-Bot 🔘", callback_data="other_"
     ),
     ],
 ]
@@ -455,26 +455,6 @@ def tutup_about_callback(update: Update, context: CallbackContext):
             ),
         )
 
-
-@run_async
-def admin(update: Update, context: CallbackContext):
-    args = context.args
-    update.effective_message.reply_text(random.choice(plugins_string.ADMIN))
-    query = update.callback_query
-    if query.data == "admin_":
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(text="Shield", url="t.me/SpamProtectionRobot"),
-                        InlineKeyboardButton(text="Manage", url="t.me/RosoManage_bot"),
-                    ],
-                    [   
-                        InlineKeyboardButton(text="⌂", callback_data="help_back")],
-                ]
-            ),
-
 @run_async
 def get_help(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
@@ -773,7 +753,6 @@ def main():
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
     other_callback_handler = CallbackQueryHandler(Other_about_callback, pattern=r"other_")
     tutup_callback_handler = CallbackQueryHandler(tutup_about_callback, pattern=r"tutup_")
-    admin_callback_handler = CallbackQueryHandler(admin, pattern=r"admin_")
 
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
@@ -784,7 +763,6 @@ def main():
     dispatcher.add_handler(about_callback_handler)
     dispatcher.add_handler(source_callback_handler)
     dispatcher.add_handler(other_callback_handler)
-    dispatcher.add_handler(admin_callback_handler)
     dispatcher.add_handler(tutup_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
