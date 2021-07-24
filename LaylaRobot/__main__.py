@@ -28,7 +28,7 @@ from LaylaRobot import (
 from LaylaRobot.modules import ALL_MODULES
 from LaylaRobot.modules.helper_funcs.chat_status import is_user_admin
 from LaylaRobot.modules.helper_funcs.misc import paginate_modules
-from LaylaRobot.modules.plugins_admin import admin_callback
+from LaylaRobot.modules.plugins_admin import admin_callback, staf_callback
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -794,6 +794,7 @@ def main():
     tutup_callback_handler = CallbackQueryHandler(tutup_about_callback, pattern=r"tutup_")
     plugin_callback_handler = CallbackQueryHandler(plugin_about_callback, pattern=r"plugin_")
     admin_callback_handler = CallbackQueryHandler(admin_callback, pattern=r"admin_")
+    staf_callback_handler = CallbackQueryHandler(staf_callback, pattern=r"staf_")
 
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
@@ -807,6 +808,7 @@ def main():
     dispatcher.add_handler(tutup_callback_handler)
     dispatcher.add_handler(plugin_callback_handler)
     dispatcher.add_handler(admin_callback_handler)
+    dispatcher.add_handler(staf_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
