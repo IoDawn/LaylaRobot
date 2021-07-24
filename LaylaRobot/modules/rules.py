@@ -55,16 +55,14 @@ def send_rules(update, chat_id, from_pm=False):
         )
     elif rules:
         update.effective_message.reply_text(
-            "Dimana anda ingin melihat peraturan grup?",
+            "Silakan klik tombol di bawah ini untuk melihat rules",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="👤 Lihat di pesan pribadi", url=f"t.me/{bot.username}?start={chat_id}"
+                            text="📜 Rules", url=f"t.me/{bot.username}?start={chat_id}"
                         )
-                    ],
-                    [   
-                        InlineKeyboardButton(text="👥 Lihat disini",callback_data="sql.get_rules(chat_id)")],   
+                    ]
                 ]
             ),
         )
