@@ -64,6 +64,15 @@ def admin_callback(update, context):
                 [
                     [
                         InlineKeyboardButton(text="Staff", callback_data="staf_"),
+                        InlineKeyboardButton(text="Power", callback_data="staf_"),
+                    ],
+                    [
+                        InlineKeyboardButton(text="Approve", callback_data="admin_"),
+                        InlineKeyboardButton(text="Connect", callback_data="tools_"),
+                    ],
+                    [
+                        InlineKeyboardButton(text="Reports", callback_data="funs_"),
+                        InlineKeyboardButton(text="Warns", callback_data="misc_"),
                     ],
                     [   
                         InlineKeyboardButton(text="back", callback_data="plugin_")],
