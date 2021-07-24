@@ -530,7 +530,7 @@ def get_help(update: Update, context: CallbackContext):
                             )
                         ],
                         [   
-                            InlineKeyboardButton(text="👥 Buka disini",callback_data="help_back")],   
+                            InlineKeyboardButton(text="👥 Buka disini",callback_data="plugin_")],   
                     ]
                 ),
             )
