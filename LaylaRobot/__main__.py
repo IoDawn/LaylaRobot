@@ -457,11 +457,9 @@ def tutup_about_callback(update: Update, context: CallbackContext):
 def get_help(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
     args = update.effective_message.text.split(None, 1)
-    user = update.effective_user  # type: Optional[User]
 
     # ONLY send help in PM
     if chat.type != chat.PRIVATE:
-        if is_user_admin(chat, user.id):
         if len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
             module = args[1].lower()
             update.effective_message.reply_text(
