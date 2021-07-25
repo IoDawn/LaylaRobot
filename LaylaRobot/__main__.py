@@ -460,7 +460,7 @@ def plugin_about_callback(update, context):
     query = update.callback_query
     if query.data == "plugin_":
         query.message.edit_text(
-            text=f"*Mᴏᴅᴜʟᴇs ᴏғ Rᴏsᴏ*"
+            text=f"*Hᴇʟᴘ ᴍᴇɴᴜ ᴏғ Rᴏsᴏ*"
             f"\n➛ Cmds: `228`"
             f"\n➛ Plugins: `59`",
             parse_mode=ParseMode.MARKDOWN,
@@ -782,7 +782,7 @@ def main():
     test_handler = CommandHandler("test", test)
     start_handler = CommandHandler("start", start)
 
-    help_handler = CommandHandler("help", get_help)
+    help_handler = CommandHandler("help", plugin_)
     help_callback_handler = CallbackQueryHandler(help_button, pattern=r"help_.*")
 
     settings_handler = CommandHandler("settings", get_settings)
@@ -800,6 +800,7 @@ def main():
     izin_callback_handler = CallbackQueryHandler(izin_callback, pattern=r"izin_")
     konek_callback_handler = CallbackQueryHandler(konek_callback, pattern=r"konek_")
     lapor_callback_handler = CallbackQueryHandler(lapor_callback, pattern=r"lapor_")
+    ingat_callback_handler = CallbackQueryHandler(ingat_callback, pattern=r"ingat_")
 
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
