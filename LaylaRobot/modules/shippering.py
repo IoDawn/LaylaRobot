@@ -47,7 +47,7 @@ async def couple(_, message):
 
             couple_selection_message = f"""**Pasangan hari ini telah dipilih:**
 {c1_mention} + {c2_mention} = ❤️
-Pasangan baru berikutnya dapat dipilih pada jam 12Am {tomorrow}"""
+Pasangan baru berikutnya dapat dipilih pada `12Am {tomorrow}`"""
             await app.send_message(
                 message.chat.id,
                 text=couple_selection_message
@@ -65,7 +65,7 @@ Pasangan baru berikutnya dapat dipilih pada jam 12Am {tomorrow}"""
             c2_name = (await app.get_users(c2_id)).first_name
             couple_selection_message = f"""Pasangan hari ini:
 [{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = ❤️
-Pasangan baru berikutnya dapat dipilih pada jam 12Am {tomorrow}__"""
+Pasangan baru berikutnya dapat dipilih di jam 12Am {tomorrow}__"""
             await app.send_message(
                 message.chat.id,
                 text=couple_selection_message
@@ -77,7 +77,7 @@ Pasangan baru berikutnya dapat dipilih pada jam 12Am {tomorrow}__"""
 
 
 __help__ = """
- ❍ /shipping - To Choose Couple Of The Day
+ ❍ /shipping - Untuk Memilih Pasangan Hari Ini
  """
 __mod_name__ = "Couple"
 
