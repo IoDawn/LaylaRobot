@@ -832,7 +832,6 @@ def main():
     dispatcher.add_handler(konek_callback_handler)
     dispatcher.add_handler(lapor_callback_handler)
     dispatcher.add_handler(warned_callback_handler)
-
     dispatcher.add_handler(manage_callback_handler)
     dispatcher.add_handler(kata_callback_handler)
     dispatcher.add_handler(chanel_callback_handler)
@@ -843,7 +842,6 @@ def main():
     dispatcher.add_handler(malam_callback_handler)
     dispatcher.add_handler(atur_callback_handler)
     dispatcher.add_handler(wlcm_callback_handler)
-
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
