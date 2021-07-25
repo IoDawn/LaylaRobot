@@ -89,7 +89,7 @@ def manage_callback(update, context):
 
 
 @run_async
-def kata_about_callback(update: Update, context: CallbackContext):
+def kata_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "kata_":
         query.message.edit_text(
@@ -115,7 +115,7 @@ def kata_about_callback(update: Update, context: CallbackContext):
 
 
 @run_async
-def chanel_about_callback(update: Update, context: CallbackContext):
+def chanel_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "chanel_":
         query.message.edit_text(
@@ -133,11 +133,56 @@ def chanel_about_callback(update: Update, context: CallbackContext):
 
 
 @run_async
-def tutup_about_callback(update: Update, context: CallbackContext):
+def kontrol_callback(update: Update, context: CallbackContext):
     query = update.callback_query
-    if query.data == "tutup_":
+    if query.data == "kontrol_":
         query.message.edit_text(
-            text="""TEKS""",
+            text="""Commands for *Control*
+                 \n*Blue-Cleaned*
+ • /cleanblue (on/off): menghapus perintah setelah dikirim
+ • /ignoreblue (kata): mencegah pembersihan otomatis perintah
+ • /unignoreblue (kata): nonaktifkan pencegah pembersihan otomatis dari perintah
+ • /listblue: daftar perintah yang saat ini masuk daftar putih
+                 \n*AntiFlood*
+• /flood: lihat pengaturan saat ini
+• /setflood: mengaktifkan atau menonaktifkan pengendalian banjir
+• /setfloodmode: tindakan yang dilakukan ketika pengguna telah melampaui batas flood.""",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="➥", callback_data="manage_")]]
+            ),
+        )
+
+
+@run_async
+def fsub_callback(update: Update, context: CallbackContext):
+    query = update.callback_query
+    if query.data == "fsub_":
+        query.message.edit_text(
+            text="""Commands for *Force Subs*
+                 \n*Khusus Owner:*
+• /fsub {channel username} - untuk mengaktifkan dan mengatur channel.
+• /fsub: cek pengaturan saat ini.
+• /fsub disable: nonaktifkan fsub
+• /fsub clear: untuk melepas semua anggota yang dibisukan oleh saya.""",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="➥", callback_data="manage_")]]
+            ),
+        )
+
+
+@run_async
+def feder_callback(update: Update, context: CallbackContext):
+    query = update.callback_query
+    if query.data == "lok_":
+        query.message.edit_text(
+            text="""Commands for *Federation*
+• /fedownerhelp: help untuk owner federasi
+• /fedadminhelp: help untuk admin federasi
+• /feduserhelp: help untuk semua pengguna federasi""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
