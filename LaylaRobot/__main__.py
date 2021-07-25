@@ -92,7 +92,7 @@ buttons = [
             text="Plugins ⏹", callback_data="help_back"),
     ],
     [  
-        InlineKeyboardButton(text="🔘 More-Bot 🔘", callback_data="admin_"
+        InlineKeyboardButton(text="🔘 More-Bot 🔘", callback_data="other_"
     ),
     ],
 ]
@@ -304,7 +304,7 @@ def help_button(update, context):
                 reply_markup=InlineKeyboardMarkup(
                     [
                      [
-                        InlineKeyboardButton(text="✕", callback_data="help_back")
+                        InlineKeyboardButton(text="➥", callback_data="help_back")
                      ]
                     ]
                 ),
@@ -793,8 +793,14 @@ def main():
     other_callback_handler = CallbackQueryHandler(Other_about_callback, pattern=r"other_")
     tutup_callback_handler = CallbackQueryHandler(tutup_about_callback, pattern=r"tutup_")
     plugin_callback_handler = CallbackQueryHandler(plugin_about_callback, pattern=r"plugin_")
+
     admin_callback_handler = CallbackQueryHandler(admin_callback, pattern=r"admin_")
     staf_callback_handler = CallbackQueryHandler(staf_callback, pattern=r"staf_")
+    power_callback_handler = CallbackQueryHandler(power_callback, pattern=r"power_")
+    izin_callback_handler = CallbackQueryHandler(izin_callback, pattern=r"izin_")
+    konek_callback_handler = CallbackQueryHandler(konek_callback, pattern=r"konek_")
+    lapor_callback_handler = CallbackQueryHandler(lapor_callback, pattern=r"lapor_")
+    ingat_callback_handler = CallbackQueryHandler(ingat_callback, pattern=r"ingat_")
 
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
@@ -809,6 +815,11 @@ def main():
     dispatcher.add_handler(plugin_callback_handler)
     dispatcher.add_handler(admin_callback_handler)
     dispatcher.add_handler(staf_callback_handler)
+    dispatcher.add_handler(power_callback_handler)
+    dispatcher.add_handler(izin_callback_handler)
+    dispatcher.add_handler(konek_callback_handler)
+    dispatcher.add_handler(lapor_callback_handler)
+    dispatcher.add_handler(ingat_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
