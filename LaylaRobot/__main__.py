@@ -834,7 +834,6 @@ def main():
     dispatcher.add_handler(warned_callback_handler)
     dispatcher.add_handler(manage_callback_handler)
     dispatcher.add_handler(kata_callback_handler)
-    dispatcher.add_handler(chanel_callback_handler)
     dispatcher.add_handler(kontrol_callback_handler)
     dispatcher.add_handler(fsub_callback_handler)
     dispatcher.add_handler(feder_callback_handler)
