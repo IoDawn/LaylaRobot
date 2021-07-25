@@ -16,7 +16,7 @@ def plugin_about_callback(update, context):
     query = update.callback_query
     if query.data == "plugin_":
         query.message.edit_text(
-            text=f"*Mᴏᴅᴜʟᴇs ᴏғ Rᴏsᴏ*"
+            text=f"*Hᴇʟᴘ ᴍᴇɴᴜ ᴏғ Rᴏsᴏ*"
             f"➛ Cmds: `228`"
             f"➛ Plugins: `59`",
             parse_mode=ParseMode.MARKDOWN,
@@ -56,7 +56,7 @@ def admin_callback(update, context):
     query = update.callback_query
     if query.data == "admin_":
         query.message.edit_text(
-            text="""Plugin menu of *Admin*
+            text="""*Aᴅᴍɪɴ-Mᴇɴᴜ*
                  \n""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -75,7 +75,7 @@ def admin_callback(update, context):
                         InlineKeyboardButton(text="Warns", callback_data="ingat_"),
                     ],
                     [   
-                        InlineKeyboardButton(text="➥", callback_data="plugin_")],
+                        InlineKeyboardButton(text="➩", callback_data="plugin_")],
                 ]
             ),
         )
@@ -86,8 +86,8 @@ def staf_callback(update, context):
     query = update.callback_query
     if query.data == "staf_":
         query.message.edit_text(
-            text="""Command of *Staff*
-                 \n• /staff: cek daftar admin
+            text="""Commands for *Staff*
+• /staff: cek daftar admin
                  \n*Khusus Admin:*
 • /pin: sematkan pesan
 • /unpin: lepas semat
@@ -116,8 +116,8 @@ def power_callback(update, context):
     query = update.callback_query
     if query.data == "power_":
         query.message.edit_text(
-            text="""Command of *Power*
-                 \n• /punchme: kick pengguna yg menggunakan perintah ini.
+            text="""Commands for *Power*
+• /punchme: kick pengguna yg menggunakan perintah ini.
                  \n*Cmd of Banned:*
 • /ban: ban user
 • /unban: lepas ban user
@@ -141,7 +141,7 @@ def izin_callback(update, context):
     query = update.callback_query
     if query.data == "izin_":
         query.message.edit_text(
-            text="""Command of *Approve*
+            text="""Commands for *Approve*
                  \n*Perintah admin:*
 • /approval: periksa status persetujuan pengguna digrup.
 • /approve: bebaskan member dari hukuman blacklist, lock, dll.
@@ -162,7 +162,7 @@ def konek_callback(update, context):
     if query.data == "konek_":
         query.message.edit_text(
             text="""Command of *Connect*
-                 \n• /connect: hubungkan grup ke bot untuk perintah jarak jauh
+• /connect: hubungkan grup ke bot untuk perintah jarak jauh
 • /connection: daftar grup yg terkoneksi dengan bot
 • /disconnect: putuskan koneksi grup yg tersambung
 • /helpconnect: list cmd yang tersedia dan dapat digunakan dari jarak jauh
@@ -180,8 +180,8 @@ def lapor_callback(update, context):
     query = update.callback_query
     if query.data == "lapor_":
         query.message.edit_text(
-            text="""Command of *Reports*
-                 \n• /report (alasan): laporkan user
+            text="""Commands for *Reports*
+• /report (alasan): laporkan user
 • @admin: reply chat untuk melaporkan pengguna ke admin
                  \n*Khusus Admin:*
 • /reports (on/off): mengubah pengaturan laporan grup""",
@@ -198,8 +198,8 @@ def ingat_callback(update, context):
     query = update.callback_query
     if query.data == "ingat_":
         query.message.edit_text(
-            text="""Commands of *Warns*
-                 \n• /warns: cek warn user
+            text="""Commands for *Warns*
+• /warns: cek warn user
 • /warnlist: cek daftar kata warn
                  \n*Khusus Admin:*
 • /warn: warn pengguna
