@@ -29,6 +29,7 @@ from LaylaRobot.modules import ALL_MODULES
 from LaylaRobot.modules.helper_funcs.chat_status import is_user_admin
 from LaylaRobot.modules.helper_funcs.misc import paginate_modules
 from LaylaRobot.modules.plugins_admin import admin_callback, staf_callback, power_callback, izin_callback, konek_callback, lapor_callback, ingat_callback
+from LaylaRobot.modules.plugins_manage import manage_callback, kata_callback, chanel_callback, kontrol_callback, fsub_callback, feder_callback, lok_callback, malam_callback, atur_callback, wlcm_callback
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
