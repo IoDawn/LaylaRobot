@@ -194,9 +194,9 @@ def lapor_callback(update, context):
 
 
 @run_async
-def ingat_callback(update, context):
+def warned_callback(update, context):
     query = update.callback_query
-    if query.data == "ingat_":
+    if query.data == "warned_":
         query.message.edit_text(
             text="""Commands for *Warns*
 • /warns: cek warn user
@@ -223,7 +223,7 @@ def ingat_callback(update, context):
     izin_callback_handler = CallbackQueryHandler(izin_callback, pattern=r"izin_")
     konek_callback_handler = CallbackQueryHandler(konek_callback, pattern=r"konek_")
     lapor_callback_handler = CallbackQueryHandler(lapor_callback, pattern=r"lapor_")
-    ingat_callback_handler = CallbackQueryHandler(ingat_callback, pattern=r"ingat_")
+    warned_callback_handler = CallbackQueryHandler(warned_callback, pattern=r"warned_")
 
     dispatcher.add_handler(plugin_callback_handler)
     dispatcher.add_handler(admin_callback_handler)
@@ -232,4 +232,4 @@ def ingat_callback(update, context):
     dispatcher.add_handler(izin_callback_handler)
     dispatcher.add_handler(konek_callback_handler)
     dispatcher.add_handler(lapor_callback_handler)
-    dispatcher.add_handler(ingat_callback_handler)
+    dispatcher.add_handler(warned_callback_handler)
