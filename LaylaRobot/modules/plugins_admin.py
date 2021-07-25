@@ -72,7 +72,7 @@ def admin_callback(update, context):
                     ],
                     [
                         InlineKeyboardButton(text="Reports", callback_data="lapor_"),
-                        InlineKeyboardButton(text="Warns", callback_data="ingat_"),
+                        InlineKeyboardButton(text="Warns", callback_data="warned_"),
                     ],
                     [   
                         InlineKeyboardButton(text="➩", callback_data="plugin_")],
