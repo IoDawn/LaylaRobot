@@ -56,7 +56,7 @@ def manage_callback(update, context):
     query = update.callback_query
     if query.data == "manage_":
         query.message.edit_text(
-            text="""*Mᴀɴᴀɢᴇ-Mᴇɴᴜ*
+            text="""ㅤ*【Mᴀɴᴀɢᴇ-Mᴇɴᴜ】*
                  \n""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
