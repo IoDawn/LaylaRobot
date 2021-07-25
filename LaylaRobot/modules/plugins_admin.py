@@ -64,18 +64,18 @@ def admin_callback(update, context):
                 [
                     [
                         InlineKeyboardButton(text="Staff", callback_data="staf_"),
-                        InlineKeyboardButton(text="Power", callback_data="staf_"),
+                        InlineKeyboardButton(text="Power", callback_data="power_"),
                     ],
                     [
-                        InlineKeyboardButton(text="Approve", callback_data="admin_"),
-                        InlineKeyboardButton(text="Connect", callback_data="tools_"),
+                        InlineKeyboardButton(text="Approve", callback_data="izin_"),
+                        InlineKeyboardButton(text="Connect", callback_data="konek_"),
                     ],
                     [
-                        InlineKeyboardButton(text="Reports", callback_data="funs_"),
-                        InlineKeyboardButton(text="Warns", callback_data="misc_"),
+                        InlineKeyboardButton(text="Reports", callback_data="lapor_"),
+                        InlineKeyboardButton(text="Warns", callback_data="ingat_"),
                     ],
                     [   
-                        InlineKeyboardButton(text="back", callback_data="plugin_")],
+                        InlineKeyboardButton(text="➥", callback_data="plugin_")],
                 ]
             ),
         )
@@ -86,36 +86,150 @@ def staf_callback(update, context):
     query = update.callback_query
     if query.data == "staf_":
         query.message.edit_text(
-            text="""Here is the help for the *Staff* module:
-                 \n❍ /staff: Cek daftar admin di grup anda
-                 \n*Admins only:*
- ❍ /pin: Menyematkan pesan yang dibalas tanpa notif- tambahkan 'loud' atau 'notify' untuk memberikan notifikasi kepada anggota grup
- ❍ /unpin: Melepas pin pesan yang saat ini disematkan
- ❍ /invitelink: Dapatkan tautan grup
- ❍ /promote: Promote user
- ❍ /demote: Turunkan jabatan user
- ❍ /title <title>: Menetapkan judul khusus untuk admin yang dipromosikan bot
- ❍ /reload: Refresh daftar admin
- ❍ /antispam <on/off>: Akan mengaktifkan teknologi antispam kami atau melihat pengaturan Anda saat ini.
- ❍ /setgtitle <title>: Menetapkan judul obrolan baru di grup Anda.
- ❍ /setgpic: Balas ke file atau foto untuk mengatur foto profil grup!
- ❍ /delgpic: Sama seperti di atas tetapi untuk menghapus foto profil grup.
- ❍ /setsticker: Balas ke stiker untuk menjadikannya sebagai pack stiker grup!
- ❍ /setdescription <deskripsi>: Tetapkan deskripsi obrolan baru di grup.
- ❍ /zombies: Temukan semua akun mati di grup Anda.
- ❍ /zombies clean: Hapus semua akun mati dari grup Anda.""",
+            text="""Command of *Staff*
+                 \n• /staff: cek daftar admin
+                 \n*Khusus Admin:*
+• /pin: sematkan pesan
+• /unpin: lepas semat
+• /invitelink: cek tautan grup
+• /promote: promosikan user
+• /demote: turunkan user
+• /title: atur title admin
+• /reload: refresh daftar admin
+• /antispam (on/off)
+• /setgtitle: atur nama grup
+• /setgpic: atur profil grup
+• /delgpic: hapus profil grup
+• /setsticker: atur stiker grup
+• /setdescription: atur desk grup
+• /zombies: cari akun mati
+• /zombies clean: kick akun mati""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="back", callback_data="admin_")]]
+                [[InlineKeyboardButton(text="➥", callback_data="admin_")]]
+            ),
+        )
+
+@run_async
+def power_callback(update, context):
+    query = update.callback_query
+    if query.data == "power_":
+        query.message.edit_text(
+            text="""Command of *Power*
+                 \n• /punchme: kick pengguna yg menggunakan perintah ini.
+                 \n*Cmd of Banned:*
+• /ban: ban user
+• /unban: lepas ban user
+• /punch: kick user
+• /sban: ban user diam²
+• /tban: ban user sampai waktu yg anda tentukan
+                 \n*Cmd of Mute:*
+• /mute: bisukan pengguna
+• /unmute: bunyikan pengguna
+• /tmute: bisukan user sampai waktu yg anda tentukan""",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="➥", callback_data="admin_")]]
             ),
         )
 
 
+@run_async
+def izin_callback(update, context):
+    query = update.callback_query
+    if query.data == "izin_":
+        query.message.edit_text(
+            text="""Command of *Approve*
+                 \n*Perintah admin:*
+• /approval: periksa status persetujuan pengguna digrup.
+• /approve: bebaskan member dari hukuman blacklist, lock, dll.
+• /unapprove: hapus daftar pengguna yang dibebaskan.
+• /approved: daftar semua pengguna yang dibebaskan.
+• /unapproveall: Batalkan pembebasan SEMUA pengguna.""",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="➥", callback_data="admin_")]]
+            ),
+        )
+
+
+@run_async
+def konek_callback(update, context):
+    query = update.callback_query
+    if query.data == "konek_":
+        query.message.edit_text(
+            text="""Command of *Connect*
+                 \n• /connect: hubungkan grup ke bot untuk perintah jarak jauh
+• /connection: daftar grup yg terkoneksi dengan bot
+• /disconnect: putuskan koneksi grup yg tersambung
+• /helpconnect: list cmd yang tersedia dan dapat digunakan dari jarak jauh
+• /allowconnect (on/off): izinkan member untuk koneksi dgn bot""",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="➥", callback_data="admin_")]]
+            ),
+        )
+
+
+@run_async
+def lapor_callback(update, context):
+    query = update.callback_query
+    if query.data == "lapor_":
+        query.message.edit_text(
+            text="""Command of *Reports*
+                 \n• /report (alasan): laporkan user
+• @admin: reply chat untuk melaporkan pengguna ke admin
+                 \n*Khusus Admin:*
+• /reports (on/off): mengubah pengaturan laporan grup""",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="➥", callback_data="admin_")]]
+            ),
+        )
+
+
+@run_async
+def ingat_callback(update, context):
+    query = update.callback_query
+    if query.data == "ingat_":
+        query.message.edit_text(
+            text="""Commands of *Warns*
+                 \n• /warns: cek warn user
+• /warnlist: cek daftar kata warn
+                 \n*Khusus Admin:*
+• /warn: warn pengguna
+• /dwarn: warn & hapus chatnya
+• /resetwarn: hapus warn
+• /addwarn: atur kata warn
+• /nowarn: stop filter warn
+• /warnlimit: atur batas warn
+• /strongwarn (on/off): kick user yg melebihi batas warn""",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="➥", callback_data="admin_")]]
+            ),
+        )
+
     plugin_about_callback = CallbackQueryHandler(plugin_about_callback, pattern=r"plugin_")
     admin_callback_handler = CallbackQueryHandler(admin_callback, pattern=r"admin_")
     staf_callback_handler = CallbackQueryHandler(staf_callback, pattern=r"staf_")
+    power_about_callback = CallbackQueryHandler(plugin_about_callback, pattern=r"power_")
+    izin_callback_handler = CallbackQueryHandler(admin_callback, pattern=r"izin_")
+    konek_callback_handler = CallbackQueryHandler(staf_callback, pattern=r"konek_")
+    lapor_callback_handler = CallbackQueryHandler(admin_callback, pattern=r"lapor_")
+    ingat_callback_handler = CallbackQueryHandler(staf_callback, pattern=r"ingat_")
 
     dispatcher.add_handler(plugin_callback_handler)
     dispatcher.add_handler(admin_callback_handler)
     dispatcher.add_handler(staf_callback_handler)
+    dispatcher.add_handler(power_callback_handler)
+    dispatcher.add_handler(izin_callback_handler)
+    dispatcher.add_handler(konek_callback_handler)
+    dispatcher.add_handler(lapor_callback_handler)
+    dispatcher.add_handler(ingat_callback_handler)
