@@ -28,7 +28,7 @@ from LaylaRobot import (
 from LaylaRobot.modules import ALL_MODULES
 from LaylaRobot.modules.helper_funcs.chat_status import is_user_admin
 from LaylaRobot.modules.helper_funcs.misc import paginate_modules
-from LaylaRobot.modules.plugins_admin import admin_callback, staf_callback, power_callback, izin_callback, konek_callback, lapor_callback, ingat_callback
+from LaylaRobot.modules.plugins_admin import admin_callback, staf_callback, power_callback, izin_callback, konek_callback, lapor_callback, warned_callback
 from LaylaRobot.modules.plugins_manage import manage_callback, kata_callback, chanel_callback, kontrol_callback, fsub_callback, feder_callback, lok_callback, malam_callback, atur_callback, wlcm_callback
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
@@ -801,7 +801,18 @@ def main():
     izin_callback_handler = CallbackQueryHandler(izin_callback, pattern=r"izin_")
     konek_callback_handler = CallbackQueryHandler(konek_callback, pattern=r"konek_")
     lapor_callback_handler = CallbackQueryHandler(lapor_callback, pattern=r"lapor_")
-    ingat_callback_handler = CallbackQueryHandler(ingat_callback, pattern=r"ingat_")
+    warned_callback_handler = CallbackQueryHandler(warned_callback, pattern=r"warned_")
+
+    manage_callback_handler = CallbackQueryHandler(manage_callback, pattern=r"manage_")
+    kata_callback_handler = CallbackQueryHandler(kata_callback, pattern=r"kata_")
+    chanel_about_callback = CallbackQueryHandler(chanel_callback, pattern=r"chanel_")
+    kontrol_callback_handler = CallbackQueryHandler(kontrol_callback, pattern=r"kontrol_")
+    fsub_callback_handler = CallbackQueryHandler(fsub_callback, pattern=r"fsub_")
+    feder_callback_handler = CallbackQueryHandler(feder_callback, pattern=r"feder_")
+    lok_callback_handler = CallbackQueryHandler(lok_callback, pattern=r"lok_")
+    malam_callback_handler = CallbackQueryHandler(malam_callback, pattern=r"malam_")
+    atur_callback_handler = CallbackQueryHandler(atur_callback, pattern=r"atur_")
+    wlcm_callback_handler = CallbackQueryHandler(wlcm_callback, pattern=r"wlcm_")
 
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
@@ -820,6 +831,19 @@ def main():
     dispatcher.add_handler(izin_callback_handler)
     dispatcher.add_handler(konek_callback_handler)
     dispatcher.add_handler(lapor_callback_handler)
+    dispatcher.add_handler(warned_callback_handler)
+
+    dispatcher.add_handler(manage_callback_handler)
+    dispatcher.add_handler(kata_callback_handler)
+    dispatcher.add_handler(chanel_callback_handler)
+    dispatcher.add_handler(kontrol_callback_handler)
+    dispatcher.add_handler(fsub_callback_handler)
+    dispatcher.add_handler(feder_callback_handler)
+    dispatcher.add_handler(lok_callback_handler)
+    dispatcher.add_handler(malam_callback_handler)
+    dispatcher.add_handler(atur_callback_handler)
+    dispatcher.add_handler(wlcm_callback_handler)
+
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
