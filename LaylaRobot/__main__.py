@@ -28,7 +28,16 @@ from LaylaRobot import (
 from LaylaRobot.modules import ALL_MODULES
 from LaylaRobot.modules.helper_funcs.chat_status import is_user_admin
 from LaylaRobot.modules.helper_funcs.misc import paginate_modules
-from LaylaRobot.modules.plugins_admin import admin_callback, staf_callback, power_callback, izin_callback, konek_callback, lapor_callback, warned_callback
+from LaylaRobot.modules.plugins_admin import (
+    plugin_about_callback,
+    admin_callback,
+    staf_callback,
+    power_callback,
+    izin_callback,
+    konek_callback,
+    lapor_callback,
+    warned_callback,
+)
 from LaylaRobot.modules.plugins_manage import manage_callback, kata_callback, chanel_callback, kontrol_callback, fsub_callback, feder_callback, lok_callback, malam_callback, atur_callback, wlcm_callback
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
@@ -453,46 +462,6 @@ def tutup_about_callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="Open", callback_data="help_back")]]
             ),
-        )
-
-
-@run_async
-def plugin_about_callback(update, context):
-    query = update.callback_query
-    if query.data == "plugin_":
-        query.message.edit_text(
-            text=f"*Hᴇʟᴘ ᴍᴇɴᴜ ᴏғ Rᴏsᴏ*"
-            f"\n➛ Cmds: `228`"
-            f"\n➛ Plugins: `59`",
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(text="⚙ Manage", callback_data="manage_"),
-                    ],
-                    [
-                        InlineKeyboardButton(text="🛃 Admin", callback_data="admin_"),
-                        InlineKeyboardButton(text="🧰 Tools", callback_data="tools_"),
-                    ],
-                    [
-                        InlineKeyboardButton(text="🎮  Funs", callback_data="funs_"),
-                        InlineKeyboardButton(text="🗂 Misc", callback_data="misc_"),
-                    ],
-                    [
-                        InlineKeyboardButton(text="≣", callback_data="help_back"),
-                        InlineKeyboardButton(text="⌂", callback_data="plugin_back"),   
-                        InlineKeyboardButton(text="✕", callback_data="tutup_")],
-                ]
-            ),
-        )
-    elif query.data == "plugin_back":
-        query.message.edit_text(
-                PM_START_TEXT,
-                reply_markup=InlineKeyboardMarkup(buttons),
-                parse_mode=ParseMode.MARKDOWN,
-                timeout=60,
-                disable_web_page_preview=False,
         )
 
 @run_async
