@@ -121,9 +121,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-*Hᴇʟᴘ ᴍᴇɴᴜ ᴏғ Rᴏso*ㅤㅤㅤㅤㅤㅤ
-➛ Cmds: `228`
-➛ Plugins: `59`
+*Pʟᴜɢɪɴs Lɪsᴛ Oғ Rᴏsᴏ* 📁
 """
 
 DONATE_STRING = """No need i'm rich."""
@@ -513,7 +511,7 @@ def get_help(update: Update, context: CallbackContext):
                             )
                         ],
                         [   
-                            InlineKeyboardButton(text="👥 Buka disini",callback_data="help_back")],   
+                            InlineKeyboardButton(text="👥 Buka disini",callback_data="plugin_")],   
                     ]
                 ),
             )
