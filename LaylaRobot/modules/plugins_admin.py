@@ -1,5 +1,5 @@
 from LaylaRobot.modules import ALL_MODULES
-from LaylaRoboy.modules.purge import DEL_HANDLER
+from LaylaRobot.modules.purge import DEL_HANDLER
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import TelegramError
 from telegram.ext.dispatcher import run_async
