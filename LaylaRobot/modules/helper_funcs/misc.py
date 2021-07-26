@@ -3,7 +3,7 @@ from typing import Dict, List
 
 from LaylaRobot import NO_LOAD
 from LaylaRobot.modules import ALL_MODULES
-from LaylaRobot.modules.plugins_admin import plugin_callback
+from LaylaRobot.modules.plugins_admin import plugin_about_callback
 from telegram import MAX_MESSAGE_LENGTH, Bot, InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import TelegramError
 from telegram.ext.dispatcher import run_async
@@ -158,7 +158,7 @@ def tutup_about_callback(update: Update, context: CallbackContext):
 
 
     tutup_callback_handler = CallbackQueryHandler(tutup_about_callback, pattern=r"tutup_")
-    plugin_callback_handler = CallbackQueryHandler(plugin_callback, pattern=r"plugin_")
+    plugin_callback_handler = CallbackQueryHandler(plugin_about_callback, pattern=r"plugin_")
 
     dispatcher.add_handler(tutup_callback_handler)
     dispatcher.add_handler(plugin_callback_handler)
