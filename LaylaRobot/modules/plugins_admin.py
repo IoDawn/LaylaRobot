@@ -17,8 +17,8 @@ def plugin_about_callback(update, context):
     if query.data == "plugin_":
         query.message.edit_text(
             text=f"*Hᴇʟᴘ ᴍᴇɴᴜ ᴏғ Rᴏsᴏ*"
-            f"➛ Cmds: `228`"
-            f"➛ Plugins: `59`",
+            f"\n➛ Cmds: `228`"
+            f"\n➛ Plugins: `59`",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
