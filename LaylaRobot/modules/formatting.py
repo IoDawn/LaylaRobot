@@ -29,7 +29,7 @@ def get_help(update: Update, context: CallbackContext):
                             InlineKeyboardButton(text="Music", url="t.me/RosoMusic_bot"),
                         ],
                         [   
-                            InlineKeyboardButton(text="⌂", callback_data="other_back")],
+                            InlineKeyboardButton(text="⌂", callback_data="help_back")],
                     ]
                 ),
             )
