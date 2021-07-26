@@ -121,7 +121,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-*Hᴇʟᴘ ᴍᴇɴᴜ ᴏғ Rᴏsᴏ*
+*Hᴇʟᴘ ᴍᴇɴᴜ ᴏғ Rᴏso*ㅤㅤㅤㅤㅤㅤ
 ➛ Cmds: `228`
 ➛ Plugins: `59`
 """
