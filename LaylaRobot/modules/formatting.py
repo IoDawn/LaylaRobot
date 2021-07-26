@@ -17,6 +17,7 @@ __mod_name__ = "Formatting"
 @run_async
 def get_help(update: Update, context: CallbackContext):
     query = update.callback_query
+    if query.data == "get_help":
         query.message.edit_text(
             text=f"*test format*"
             f"",
