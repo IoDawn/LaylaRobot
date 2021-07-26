@@ -238,7 +238,3 @@ def warned_callback(update, context):
     dispatcher.add_handler(konek_callback_handler)
     dispatcher.add_handler(lapor_callback_handler)
     dispatcher.add_handler(warned_callback_handler)
-
-DEL_HANDLER = delete_messages, events.NewMessage(pattern="^[!/.]del$")
-
-telethn.add_event_handler(*DEL_HANDLER)
