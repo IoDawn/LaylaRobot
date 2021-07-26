@@ -38,7 +38,18 @@ from LaylaRobot.modules.plugins_admin import (
     lapor_callback,
     warned_callback,
 )
-from LaylaRobot.modules.plugins_manage import manage_callback, kata_callback, chanel_callback, kontrol_callback, fsub_callback, feder_callback, lok_callback, malam_callback, atur_callback, wlcm_callback
+from LaylaRobot.modules.plugins_manage import (
+    manage_callback,
+    kata_callback,
+    chanel_callback,
+    kontrol_callback,
+    fsub_callback,
+    feder_callback,
+    lok_callback,
+    malam_callback,
+    atur_callback
+    wlcm_callback
+)
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -771,7 +782,6 @@ def main():
     konek_callback_handler = CallbackQueryHandler(konek_callback, pattern=r"konek_")
     lapor_callback_handler = CallbackQueryHandler(lapor_callback, pattern=r"lapor_")
     warned_callback_handler = CallbackQueryHandler(warned_callback, pattern=r"warned_")
-
     manage_callback_handler = CallbackQueryHandler(manage_callback, pattern=r"manage_")
     kata_callback_handler = CallbackQueryHandler(kata_callback, pattern=r"kata_")
     chanel_about_callback = CallbackQueryHandler(chanel_callback, pattern=r"chanel_")
