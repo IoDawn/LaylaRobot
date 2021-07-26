@@ -1,5 +1,9 @@
 from LaylaRobot.modules import ALL_MODULES
-from LaylaRobot.modules.purge import DEL_HANDLER
+from LaylaRobot.modules.purge import DEL_HANDLER, delete_messages
+from LaylaRobot.modules.helper_funcs.telethn.chatstatus import (
+    can_delete_messages,
+    user_is_admin,
+)
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import TelegramError
 from telegram.ext.dispatcher import run_async
