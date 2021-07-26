@@ -138,7 +138,7 @@ def fsub_callback(update: Update, context: CallbackContext):
 @run_async
 def feder_callback(update: Update, context: CallbackContext):
     query = update.callback_query
-    if query.data == "lok_":
+    if query.data == "feder_":
         query.message.edit_text(
             text="""Commands for *Federation*
 • /fedownerhelp: help untuk owner federasi
