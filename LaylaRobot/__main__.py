@@ -121,7 +121,9 @@ buttons = [
 
 
 HELP_STRINGS = """
-*Pʟᴜɢɪɴs Lɪsᴛ Oғ Rᴏsᴏ* 📁
+*Hᴇʟᴘ ᴍᴇɴᴜ ᴏғ Rᴏsᴏ*
+➛ Cmds: `228`
+➛ Plugins: `59`
 """
 
 DONATE_STRING = """No need i'm rich."""
@@ -313,7 +315,7 @@ def help_button(update, context):
         if mod_match:
             module = mod_match.group(1)
             text = (
-                "Here is the help for the *{}* module:\n".format(
+                "Help for *{}* module:\n".format(
                     HELPABLE[module].__mod_name__
                 )
                 + HELPABLE[module].__help__
@@ -511,7 +513,7 @@ def get_help(update: Update, context: CallbackContext):
                             )
                         ],
                         [   
-                            InlineKeyboardButton(text="👥 Buka disini",callback_data="plugin_")],   
+                            InlineKeyboardButton(text="👥 Buka disini",callback_data="help_back")],   
                     ]
                 ),
             )
