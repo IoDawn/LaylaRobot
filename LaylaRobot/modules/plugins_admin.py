@@ -1,4 +1,5 @@
 from LaylaRobot.modules import ALL_MODULES
+from LaylaRoboy.modules.purge import DEL_HANDLER
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import TelegramError
 from telegram.ext.dispatcher import run_async
@@ -37,7 +38,7 @@ def plugin_about_callback(update, context):
                     [
                         InlineKeyboardButton(text="≣", callback_data="help_back"),
                         InlineKeyboardButton(text="⌂", callback_data="plugin_back"),   
-                        InlineKeyboardButton(text="✕", callback_data="tutup_")],
+                        InlineKeyboardButton(text="✕", callback_data="DEL_HANDLER")],
                 ]
             ),
         )
@@ -216,7 +217,7 @@ def warned_callback(update, context):
             ),
         )
 
-    plugin_about_callback = CallbackQueryHandler(plugin_about_callback, pattern=r"plugin_")
+    plugin_callback_handler = CallbackQueryHandler(plugin_about_callback, pattern=r"plugin_")
     admin_callback_handler = CallbackQueryHandler(admin_callback, pattern=r"admin_")
     staf_callback_handler = CallbackQueryHandler(staf_callback, pattern=r"staf_")
     power_callback_handler = CallbackQueryHandler(power_callback, pattern=r"power_")
