@@ -16,20 +16,21 @@ __mod_name__ = "Formatting"
 
 @run_async
 def get_help(update: Update, context: CallbackContext):
-    chat = update.effective_chat  # type: Optional[Chat]
-    args = update.effective_message.text.split(None, 1)
-
-            update.effective_message.reply_text(
-                f"test format",
-                reply_markup=InlineKeyboardMarkup(
+    query = update.callback_query
+        query.message.edit_text(
+            text=f"*test format*"
+            f"",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
                     [
-                        [
-                            InlineKeyboardButton(text="Shield", url="t.me/SpamProtectionRobot"),
-                            InlineKeyboardButton(text="Manage", url="t.me/RosoManage_bot"),
-                            InlineKeyboardButton(text="Music", url="t.me/RosoMusic_bot"),
-                        ],
-                        [   
-                            InlineKeyboardButton(text="⌂", callback_data="help_back")],
-                    ]
-                ),
-            )
+                        InlineKeyboardButton(text="Shield", url="t.me/SpamProtectionRobot"),
+                        InlineKeyboardButton(text="Manage", url="t.me/RosoManage_bot"),
+                        InlineKeyboardButton(text="Music", url="t.me/RosoMusic_bot"),
+                    ],
+                    [   
+                        InlineKeyboardButton(text="⌂", callback_data="help_back")],
+                ]
+            ),
+        )
