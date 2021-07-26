@@ -784,7 +784,7 @@ def main():
     warned_callback_handler = CallbackQueryHandler(warned_callback, pattern=r"warned_")
     manage_callback_handler = CallbackQueryHandler(manage_callback, pattern=r"manage_")
     kata_callback_handler = CallbackQueryHandler(kata_callback, pattern=r"kata_")
-    chanel_about_callback = CallbackQueryHandler(chanel_callback, pattern=r"chanel_")
+    chanel_callback_handler = CallbackQueryHandler(chanel_callback, pattern=r"chanel_")
     kontrol_callback_handler = CallbackQueryHandler(kontrol_callback, pattern=r"kontrol_")
     fsub_callback_handler = CallbackQueryHandler(fsub_callback, pattern=r"fsub_")
     feder_callback_handler = CallbackQueryHandler(feder_callback, pattern=r"feder_")
