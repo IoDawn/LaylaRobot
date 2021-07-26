@@ -47,8 +47,8 @@ from LaylaRobot.modules.plugins_manage import (
     feder_callback,
     lok_callback,
     malam_callback,
-    atur_callback
-    wlcm_callback
+    atur_callback,
+    wlcm_callback,
 )
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
