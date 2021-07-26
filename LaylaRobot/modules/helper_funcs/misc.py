@@ -3,6 +3,7 @@ from typing import Dict, List
 
 from LaylaRobot import NO_LOAD
 from LaylaRobot.modules import ALL_MODULES
+from LaylaRobot.modules.plugins_admin import plugin_callback
 from telegram import MAX_MESSAGE_LENGTH, Bot, InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import TelegramError
 from telegram.ext.dispatcher import run_async
@@ -75,7 +76,7 @@ def paginate_modules(page_n: int, module_dict: Dict, prefix, chat=None) -> List:
     # can only have a certain amount of buttons side by side
     if len(pairs) > 7:
         pairs = pairs[modulo_page * 6:6 * (modulo_page + 1)] + [
-            (EqInlineKeyboardButton("◁", callback_data="{}_prev({})".format(prefix, modulo_page)),
+            (EqInlineKeyboardButton("≡", callback_data=plugin_")),
                 EqInlineKeyboardButton("⌂", callback_data="tutup_"),
              EqInlineKeyboardButton("▷", callback_data="{}_next({})".format(prefix, modulo_page)))]
 
@@ -157,6 +158,7 @@ def tutup_about_callback(update: Update, context: CallbackContext):
 
 
     tutup_callback_handler = CallbackQueryHandler(tutup_about_callback, pattern=r"tutup_")
-
+    plugin_callback_handler = CallbackQueryHandler(plugin_callback, pattern=r"plugin_")
 
     dispatcher.add_handler(tutup_callback_handler)
+    dispatcher.add_handler(plugin_callback_handler)
