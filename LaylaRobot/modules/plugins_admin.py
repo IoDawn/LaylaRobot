@@ -41,8 +41,8 @@ def plugin_about_callback(update, context):
                     ],
                     [
                         InlineKeyboardButton(text="≣", callback_data="help_back"),
-                        InlineKeyboardButton(text="⌂", callback_data="plugin_back"),   
-                        InlineKeyboardButton(text="✕", callback_data="DEL_HANDLER")],
+                        InlineKeyboardButton(text="⌂", callback_data="layla_back"),   
+                        InlineKeyboardButton(text="✕", callback_data="tutup_")],
                 ]
             ),
         )
