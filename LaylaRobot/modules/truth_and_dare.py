@@ -30,6 +30,11 @@ def roso(update: Update, context: CallbackContext):
     args = context.args
     update.effective_message.reply_text(random.choice(truth_and_dare_string.ROSO))
 
+@run_async
+def insult(update: Update, context: CallbackContext):
+    args = context.args
+    update.effective_message.reply_text(random.choice(truth_and_dare_string.INSULT))
+
 
 TRUTH_HANDLER = DisableAbleCommandHandler("truth", truth)
 DARE_HANDLER = DisableAbleCommandHandler("dare", dare)
@@ -41,6 +46,7 @@ ROSO_HANDLER = DisableAbleCommandHandler("roso", roso)
 ROSO_REGEX_HANDLER = DisableAbleMessageHandler(
     Filters.regex(r"^(?i)roso(.*)$"), roso, friendly="roso"
 )
+INSULT_HANDLER = DisableAbleCommandHandler("insult", insult)
 
 dispatcher.add_handler(TRUTH_HANDLER)
 dispatcher.add_handler(DARE_HANDLER)
@@ -48,3 +54,4 @@ dispatcher.add_handler(QUOTE_HANDLER)
 dispatcher.add_handler(QUOTE_REGEX_HANDLER)
 dispatcher.add_handler(ROSO_HANDLER)
 dispatcher.add_handler(ROSO_REGEX_HANDLER)
+dispatcher.add_handler(INSULT_HANDLER)
