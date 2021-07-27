@@ -28,6 +28,7 @@ from LaylaRobot import (
 from LaylaRobot.modules import ALL_MODULES
 from LaylaRobot.modules.helper_funcs.chat_status import is_user_admin
 from LaylaRobot.modules.helper_funcs.misc import paginate_modules
+fron LaylaRobot.modules.ping import ping
 from LaylaRobot.modules.plugins_admin import (
     plugin_about_callback,
     admin_callback,
@@ -122,6 +123,7 @@ buttons = [
 
 HELP_STRINGS = """
 *Pʟᴜɢɪɴs Lɪsᴛ Oғ Rᴏsᴏ* 📁
+Uptime: <code>{}</code>".format(telegram_ping, uptime)
 """
 
 DONATE_STRING = """No need i'm rich."""
@@ -813,6 +815,7 @@ def main():
     dispatcher.add_handler(warned_callback_handler)
     dispatcher.add_handler(manage_callback_handler)
     dispatcher.add_handler(kata_callback_handler)
+    dispatcher.add_handler(chanel_callback_handler)
     dispatcher.add_handler(kontrol_callback_handler)
     dispatcher.add_handler(fsub_callback_handler)
     dispatcher.add_handler(feder_callback_handler)
