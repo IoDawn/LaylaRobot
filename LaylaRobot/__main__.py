@@ -71,12 +71,7 @@ from LaylaRobot.modules.plugins_funs import (
     fmusic_callback,
     fstiker_callback,
 )
-from LaylaRobot.modules.plugins_misc import (
-    miks_callback,
-    gmath_callback,
-    gextra_callback,
-    gother_callback,
-)
+from LaylaRobot.modules.plugins_misc import miks_callback, gmath_callback, gextra_callback, gother_callback
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
