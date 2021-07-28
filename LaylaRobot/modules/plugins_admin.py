@@ -36,8 +36,8 @@ def plugin_about_callback(update, context):
                         InlineKeyboardButton(text="🧰 Tools", callback_data="alat_"),
                     ],
                     [
-                        InlineKeyboardButton(text="🎮  Funs", callback_data="funs_"),
-                        InlineKeyboardButton(text="🗂 Misc", callback_data="misc_"),
+                        InlineKeyboardButton(text="🎮  Funs", callback_data="fan_"),
+                        InlineKeyboardButton(text="🗂 Misc", callback_data="campur_"),
                     ],
                     [
                         InlineKeyboardButton(text="≣", callback_data="help_back"),
