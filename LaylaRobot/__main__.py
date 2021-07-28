@@ -61,6 +61,16 @@ from LaylaRobot.modules.plugins_tools import (
     rtgraph_callback,
     rtagger_callback,
 )
+from LaylaRobot.modules.plugins_funs import (
+    fan_callback,
+    fanime_callback,
+    fcouple_callback,
+    fgame_callback,
+    flogo_callback,
+    fmeme_callback,
+    fmusic_callback,
+    fstiker_callback,
+)
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -815,6 +825,16 @@ def main():
     rtgraph_callback_handler = CallbackQueryHandler(rtgraph_callback, pattern=r"rtgraph_")
     rtagger_callback_handler = CallbackQueryHandler(rtagger_callback, pattern=r"rtagger_")
 
+    plugin_about_callback = CallbackQueryHandler(plugin_about_callback, pattern=r"plugin_")
+    fan_callback_handler = CallbackQueryHandler(fan_callback, pattern=r"fan_")
+    fanime_callback_handler = CallbackQueryHandler(fanime_callback, pattern=r"fanime_")
+    fcouple_callback_handler = CallbackQueryHandler(fcouple_callback, pattern=r"fcouple_")
+    fgame_callback_handler = CallbackQueryHandler(fgame_callback, pattern=r"fgame_")
+    flogo_callback_handler = CallbackQueryHandler(fsub_callback, pattern=r"flogo_")
+    fmeme_callback_handler = CallbackQueryHandler(fmeme_callback, pattern=r"fmeme_")
+    fmusic_callback_handler = CallbackQueryHandler(fmusic_callback, pattern=r"fmusic_")
+    fstiker_callback_handler = CallbackQueryHandler(fstiker_callback, pattern=r"fstiker_")
+
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
 
@@ -852,6 +872,14 @@ def main():
     dispatcher.add_handler(rnotes_callback_handler)
     dispatcher.add_handler(rtgraph_callback_handler)
     dispatcher.add_handler(rtagger_callback_handler)
+    dispatcher.add_handler(fan_callback_handler)
+    dispatcher.add_handler(fanime_callback_handler)
+    dispatcher.add_handler(fcouple_callback_handler)
+    dispatcher.add_handler(fgame_callback_handler)
+    dispatcher.add_handler(flogo_callback_handler)
+    dispatcher.add_handler(fmeme_callback_handler)
+    dispatcher.add_handler(fmusic_callback_handler)
+    dispatcher.add_handler(fstiker_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
