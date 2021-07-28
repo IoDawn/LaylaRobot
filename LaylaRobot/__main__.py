@@ -51,6 +51,17 @@ from LaylaRobot.modules.plugins_manage import (
     atur_callback,
     wlcm_callback,
 )
+from LaylaRobot.modules.plugins_tools import (
+    alat_callback,
+    rbackup_callback,
+    rdisable_callback,
+    rfilter_callback,
+    rgoogle_callback,
+    rinfo_callback,
+    rnotes_callback,
+    rtgraph_callback,
+    rtagger_callback,
+)
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -784,6 +795,7 @@ def main():
     konek_callback_handler = CallbackQueryHandler(konek_callback, pattern=r"konek_")
     lapor_callback_handler = CallbackQueryHandler(lapor_callback, pattern=r"lapor_")
     warned_callback_handler = CallbackQueryHandler(warned_callback, pattern=r"warned_")
+
     manage_callback_handler = CallbackQueryHandler(manage_callback, pattern=r"manage_")
     kata_callback_handler = CallbackQueryHandler(kata_callback, pattern=r"kata_")
     chanel_callback_handler = CallbackQueryHandler(chanel_callback, pattern=r"chanel_")
@@ -794,6 +806,16 @@ def main():
     malam_callback_handler = CallbackQueryHandler(malam_callback, pattern=r"malam_")
     atur_callback_handler = CallbackQueryHandler(atur_callback, pattern=r"atur_")
     wlcm_callback_handler = CallbackQueryHandler(wlcm_callback, pattern=r"wlcm_")
+
+    alat_callback_handler = CallbackQueryHandler(alat_callback, pattern=r"alat_")
+    rbackup_callback_handler = CallbackQueryHandler(rbackup_callback, pattern=r"rbackup_")
+    rdisable_callback_handler = CallbackQueryHandler(rdisable_callback, pattern=r"rdisable_")
+    rfilter_callback_handler = CallbackQueryHandler(rfilter_callback, pattern=r"rfilter_")
+    rgoogle_callback_handler = CallbackQueryHandler(rgoogle_callback, pattern=r"rgoogle_")
+    rinfo_callback_handler = CallbackQueryHandler(rinfo_callback, pattern=r"rinfo_")
+    rnotes_callback_handler = CallbackQueryHandler(rnotes_callback, pattern=r"rnotes_")
+    rtgraph_callback_handler = CallbackQueryHandler(rtgraph_callback, pattern=r"rtgraph_")
+    rtagger_callback_handler = CallbackQueryHandler(rtagger_callback, pattern=r"rtagger_")
 
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
@@ -823,6 +845,16 @@ def main():
     dispatcher.add_handler(malam_callback_handler)
     dispatcher.add_handler(atur_callback_handler)
     dispatcher.add_handler(wlcm_callback_handler)
+    dispatcher.add_handler(plugin_callback_handler)
+    dispatcher.add_handler(alat_callback_handler)
+    dispatcher.add_handler(rbackup_callback_handler)
+    dispatcher.add_handler(rdisable_callback_handler)
+    dispatcher.add_handler(rfilter_callback_handler)
+    dispatcher.add_handler(rgoogle_callback_handler)
+    dispatcher.add_handler(rinfo_callback_handler)
+    dispatcher.add_handler(rnotes_callback_handler)
+    dispatcher.add_handler(rtgraph_callback_handler)
+    dispatcher.add_handler(rtagger_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
