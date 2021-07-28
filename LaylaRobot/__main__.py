@@ -831,7 +831,6 @@ def main():
     rtgraph_callback_handler = CallbackQueryHandler(rtgraph_callback, pattern=r"rtgraph_")
     rtagger_callback_handler = CallbackQueryHandler(rtagger_callback, pattern=r"rtagger_")
 
-    plugin_about_callback = CallbackQueryHandler(plugin_about_callback, pattern=r"plugin_")
     fan_callback_handler = CallbackQueryHandler(fan_callback, pattern=r"fan_")
     fanime_callback_handler = CallbackQueryHandler(fanime_callback, pattern=r"fanime_")
     fcouple_callback_handler = CallbackQueryHandler(fcouple_callback, pattern=r"fcouple_")
@@ -841,7 +840,6 @@ def main():
     fmusic_callback_handler = CallbackQueryHandler(fmusic_callback, pattern=r"fmusic_")
     fstiker_callback_handler = CallbackQueryHandler(fstiker_callback, pattern=r"fstiker_")
 
-    plugin_about_callback = CallbackQueryHandler(plugin_about_callback, pattern=r"plugin_")
     miks_callback_handler = CallbackQueryHandler(miks_callback, pattern=r"miks_")
     gmath_callback_handler = CallbackQueryHandler(gmath_callback, pattern=r"gmath_")
     gextra_callback_handler = CallbackQueryHandler(gextra_callback, pattern=r"gextra_")
