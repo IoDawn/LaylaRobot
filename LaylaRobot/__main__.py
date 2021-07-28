@@ -71,6 +71,12 @@ from LaylaRobot.modules.plugins_funs import (
     fmusic_callback,
     fstiker_callback,
 )
+from LaylaRobot.modules.plugins_misc import (
+    miks_callback,
+    gmath_callback,
+    gextra_callback,
+    gother_callback,
+)
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -835,6 +841,12 @@ def main():
     fmusic_callback_handler = CallbackQueryHandler(fmusic_callback, pattern=r"fmusic_")
     fstiker_callback_handler = CallbackQueryHandler(fstiker_callback, pattern=r"fstiker_")
 
+    plugin_about_callback = CallbackQueryHandler(plugin_about_callback, pattern=r"plugin_")
+    miks_callback_handler = CallbackQueryHandler(miks_callback, pattern=r"miks_")
+    gmath_callback_handler = CallbackQueryHandler(gmath_callback, pattern=r"gmath_")
+    gextra_callback_handler = CallbackQueryHandler(gextra_callback, pattern=r"gextra_")
+    gother_callback_handler = CallbackQueryHandler(gother_callback, pattern=r"gother_")
+
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
 
@@ -880,6 +892,10 @@ def main():
     dispatcher.add_handler(fmeme_callback_handler)
     dispatcher.add_handler(fmusic_callback_handler)
     dispatcher.add_handler(fstiker_callback_handler)
+    dispatcher.add_handler(miks_callback_handler)
+    dispatcher.add_handler(gmath_callback_handler)
+    dispatcher.add_handler(gextra_callback_handler)
+    dispatcher.add_handler(gother_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
