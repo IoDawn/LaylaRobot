@@ -28,7 +28,6 @@ from LaylaRobot import (
 from LaylaRobot.modules import ALL_MODULES
 from LaylaRobot.modules.helper_funcs.chat_status import is_user_admin
 from LaylaRobot.modules.helper_funcs.misc import paginate_modules
-from LaylaRobot.modules.ping import ping
 from LaylaRobot.modules.plugins_admin import (
     plugin_about_callback,
     admin_callback,
@@ -122,7 +121,7 @@ buttons = [
         InlineKeyboardButton(
             text="ℹ️ About", callback_data="layla_"),
         InlineKeyboardButton(
-            text="Plugins ⏹", callback_data="help_back"),
+            text="Plugins ⏹", callback_data="plugin_"),
     ],
     [  
         InlineKeyboardButton(text="🔘 More-Bot 🔘", callback_data="other_"
@@ -134,7 +133,6 @@ buttons = [
 
 HELP_STRINGS = """
 *Pʟᴜɢɪɴs Lɪsᴛ Oғ Rᴏsᴏ* 📁
-Uptime: <code>{}</code>".format(telegram_ping, uptime)
 """
 
 DONATE_STRING = """No need i'm rich."""
@@ -524,7 +522,7 @@ def get_help(update: Update, context: CallbackContext):
                             )
                         ],
                         [   
-                            InlineKeyboardButton(text="👥 Buka disini",callback_data="plugin_")],   
+                            InlineKeyboardButton(text="👥 Buka disini",callback_data="help_back")],   
                     ]
                 ),
             )
