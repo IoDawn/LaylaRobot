@@ -845,7 +845,6 @@ def main():
     dispatcher.add_handler(malam_callback_handler)
     dispatcher.add_handler(atur_callback_handler)
     dispatcher.add_handler(wlcm_callback_handler)
-    dispatcher.add_handler(plugin_callback_handler)
     dispatcher.add_handler(alat_callback_handler)
     dispatcher.add_handler(rbackup_callback_handler)
     dispatcher.add_handler(rdisable_callback_handler)
