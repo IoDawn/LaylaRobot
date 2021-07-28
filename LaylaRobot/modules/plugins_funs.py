@@ -185,7 +185,7 @@ def fstiker_callback(update: Update, context: CallbackContext):
             ),
         )
 
-    plugin_about_callback = CallbackQueryHandler(plugin_about_callback, pattern=r"plugin_")
+    plugin_callback_handler = CallbackQueryHandler(plugin_about_callback, pattern=r"plugin_")
     fan_callback_handler = CallbackQueryHandler(fan_callback, pattern=r"fan_")
     fanime_callback_handler = CallbackQueryHandler(fanime_callback, pattern=r"fanime_")
     fcouple_callback_handler = CallbackQueryHandler(fcouple_callback, pattern=r"fcouple_")
