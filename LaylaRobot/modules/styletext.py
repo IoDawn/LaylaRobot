@@ -256,6 +256,62 @@ linedfont = [
     "𝕪",
     "𝕫",
 ]
+smallcapsfont = [
+    "ᴀ",
+    "ʙ",
+    "ᴄ",
+    "ᴅ",
+    "ᴇ",
+    "ғ",
+    "ɢ",
+    "ʜ",
+    "ɪ",
+    "ᴊ",
+    "ᴋ",
+    "ʟ",
+    "ᴍ",
+    "ɴ",
+    "ᴏ",
+    "ᴘ",
+    "ᴏ̨",
+    "ʀ",    
+    "s",
+    "ᴛ",
+    "ᴜ",
+    "ᴠ",
+    "ᴡ",
+    "x",
+    "ʏ",
+    "ᴢ",
+]
+tinyfont = [
+    "ᵃ",
+    "ᵇ",
+    "ᶜ",
+    "ᵈ",
+    "ᵉ",
+    "ᶠ",
+    "ᵍ",
+    "ʰ",
+    "ⁱ",
+    "ʲ",
+    "ᵏ",
+    "ˡ",
+    "ᵐ",
+    "ⁿ",
+    "ᵒ",
+    "ᵖ",
+    "ᑫ",
+    "ʳ",
+    "ˢ",
+    "ᵗ",
+    "ᵘ",
+    "ᵛ",
+    "ʷ",
+    "ˣ",
+    "ʸ",
+    "ᶻ",
+]
 
 
 @run_async
@@ -480,16 +536,75 @@ def lined(update, context):
         message.reply_to_message.reply_text(string)
     else:
         message.reply_text(string)
+
+
+@run_async
+@typing_action
+def smallcaps(update, context):
+    args = context.args
+    message = update.effective_message
+    string = ""
+
+    if message.reply_to_message:
+        string = message.reply_to_message.text.lower().replace(" ", "  ")
+
+    if args:
+        string = "  ".join(args).lower()
+
+    if not string:
+        message.reply_text("Usage is `/smallcaps <text>`", parse_mode=ParseMode.MARKDOWN)
+        return
+
+    for normiecharacter in string:
+        if normiecharacter in normiefont:
+            smallcapscharacter = smallcapsfont[normiefont.index(normiecharacter)]
+            string = string.replace(normiecharacter, smallcapscharacter)
+
+    if message.reply_to_message:
+        message.reply_to_message.reply_text(string)
+    else:
+        message.reply_text(string)
+
+
+@run_async
+@typing_action
+def tiny(update, context):
+    args = context.args
+    message = update.effective_message
+    string = ""
+
+    if message.reply_to_message:
+        string = message.reply_to_message.text.lower().replace(" ", "  ")
+
+    if args:
+        string = "  ".join(args).lower()
+
+    if not string:
+        message.reply_text("Usage is `/tiny <text>`", parse_mode=ParseMode.MARKDOWN)
+        return
+
+    for normiecharacter in string:
+        if normiecharacter in normiefont:
+            tinycharacter = tinyfont[normiefont.index(normiecharacter)]
+            string = string.replace(normiecharacter, tinycharacter)
+
+    if message.reply_to_message:
+        message.reply_to_message.reply_text(string)
+    else:
+        message.reply_text(string)
+
 __help__ = """
 
- - /weebify <text>: weebify your text!
- - /bubble <text>: bubble your text!
- - /fbubble <text>: bubble-filled your text!
- - /square <text>: square your text!
- - /fsquare <text>: square-filled your text!
- - /blue <text>: bluify your text!
- - /latin <text>: latinify your text!
- - /lined <text>: lined your text!
+❍ /weebify <text>: weebify your text!
+❍ /bubble <text>: bubble your text!
+❍ /fbubble <text>: bubble-filled your text!
+❍ /square <text>: square your text!
+❍ /fsquare <text>: square-filled your text!
+❍ /blue <text>: bluify your text!
+❍ /latin <text>: latinify your text!
+❍ /lined <text>: lined your text!
+❍ /smallcaps <text>: small your text!
+❍ /tiny <text>: tiny your text
 
 """
 __mod_name__ = "Font"
@@ -502,6 +617,8 @@ FSQUARE_HANDLER = DisableAbleCommandHandler("fsquare", fsquare)
 BLUE_HANDLER = DisableAbleCommandHandler("blue", blue)
 LATIN_HANDLER = DisableAbleCommandHandler("latin", latin)
 LINED_HANDLER = DisableAbleCommandHandler("lined", lined)
+SMALLCAPS_HANDLER = DisableAbleCommandHandler("smallcaps", smallcaps)
+TINY_HANDLER = DisableAbleCommandHandler("tiny", tiny)
 
 dispatcher.add_handler(WEEBIFY_HANDLER)
 dispatcher.add_handler(BUBBLE_HANDLER)
@@ -511,6 +628,8 @@ dispatcher.add_handler(FSQUARE_HANDLER)
 dispatcher.add_handler(BLUE_HANDLER)
 dispatcher.add_handler(LATIN_HANDLER)
 dispatcher.add_handler(LINED_HANDLER)
+dispatcher.add_handler(SMALLCAPS_HANDLER)
+dispatcher.add_handler(TINY_HANDLER)
 
 __command_list__ = ["weebify"]
 __command_list__ = ["bubble"]
@@ -520,6 +639,8 @@ __command_list__ = ["fsquare"]
 __command_list__ = ["blue"]
 __command_list__ = ["latin"]
 __command_list__ = ["lined"]
+__command_list__ = ["smallcaps"]
+__command_list__ = ["tiny"]
 __handlers__ = [WEEBIFY_HANDLER]
 __handlers__ = [BUBBLE_HANDLER]
 __handlers__ = [FBUBBLE_HANDLER]
@@ -528,3 +649,5 @@ __handlers__ = [FSQUARE_HANDLER]
 __handlers__ = [BLUE_HANDLER]
 __handlers__ = [LATIN_HANDLER]
 __handlers__ = [LINED_HANDLER]
+__handlers__ = [SMALLCAPS_HANDLER]
+__handlers__ = [TINY_HANDLER]
