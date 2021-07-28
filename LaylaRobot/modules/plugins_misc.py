@@ -110,7 +110,7 @@ def gother_callback(update: Update, context: CallbackContext):
             ),
         )
 
-    plugin_about_callback = CallbackQueryHandler(plugin_about_callback, pattern=r"plugin_")
+    plugin_callback_handler = CallbackQueryHandler(plugin_about_callback, pattern=r"plugin_")
     miks_callback_handler = CallbackQueryHandler(miks_callback, pattern=r"miks_")
     gmath_callback_handler = CallbackQueryHandler(gmath_callback, pattern=r"gmath_")
     gextra_callback_handler = CallbackQueryHandler(gextra_callback, pattern=r"gextra_")
