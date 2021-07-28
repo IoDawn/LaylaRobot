@@ -184,3 +184,23 @@ def fstiker_callback(update: Update, context: CallbackContext):
                 [[InlineKeyboardButton(text="➥", callback_data="fan_")]]
             ),
         )
+
+    plugin_about_callback = CallbackQueryHandler(plugin_about_callback, pattern=r"plugin_")
+    fan_callback_handler = CallbackQueryHandler(fan_callback, pattern=r"fan_")
+    fanime_callback_handler = CallbackQueryHandler(fanime_callback, pattern=r"fanime_")
+    fcouple_callback_handler = CallbackQueryHandler(fcouple_callback, pattern=r"fcouple_")
+    fgame_callback_handler = CallbackQueryHandler(fgame_callback, pattern=r"fgame_")
+    flogo_callback_handler = CallbackQueryHandler(fsub_callback, pattern=r"flogo_")
+    fmeme_callback_handler = CallbackQueryHandler(fmeme_callback, pattern=r"fmeme_")
+    fmusic_callback_handler = CallbackQueryHandler(fmusic_callback, pattern=r"fmusic_")
+    fstiker_callback_handler = CallbackQueryHandler(fstiker_callback, pattern=r"fstiker_")
+
+    dispatcher.add_handler(plugin_callback_handler)
+    dispatcher.add_handler(fan_callback_handler)
+    dispatcher.add_handler(fanime_callback_handler)
+    dispatcher.add_handler(fcouple_callback_handler)
+    dispatcher.add_handler(fgame_callback_handler)
+    dispatcher.add_handler(flogo_callback_handler)
+    dispatcher.add_handler(fmeme_callback_handler)
+    dispatcher.add_handler(fmusic_callback_handler)
+    dispatcher.add_handler(fstiker_callback_handler)
