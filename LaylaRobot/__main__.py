@@ -835,7 +835,7 @@ def main():
     fanime_callback_handler = CallbackQueryHandler(fanime_callback, pattern=r"fanime_")
     fcouple_callback_handler = CallbackQueryHandler(fcouple_callback, pattern=r"fcouple_")
     fgame_callback_handler = CallbackQueryHandler(fgame_callback, pattern=r"fgame_")
-    flogo_callback_handler = CallbackQueryHandler(fsub_callback, pattern=r"flogo_")
+    flogo_callback_handler = CallbackQueryHandler(flogo_callback, pattern=r"flogo_")
     fmeme_callback_handler = CallbackQueryHandler(fmeme_callback, pattern=r"fmeme_")
     fmusic_callback_handler = CallbackQueryHandler(fmusic_callback, pattern=r"fmusic_")
     fstiker_callback_handler = CallbackQueryHandler(fstiker_callback, pattern=r"fstiker_")
