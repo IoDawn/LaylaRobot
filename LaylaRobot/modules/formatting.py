@@ -13,25 +13,24 @@ from telegram.ext import (
 
 __mod_name__ = "Formatting"
 
+__help__ = """
+Hei.. nama saya Roso
+Test formatting
+"""
 
-@run_async
-def get_help(update: Update, context: CallbackContext):
-    query = update.callback_query
-    if query.data == "get_help":
-        query.message.edit_text(
-            text=f"*test format*"
-            f"",
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(text="Shield", url="t.me/SpamProtectionRobot"),
-                        InlineKeyboardButton(text="Manage", url="t.me/RosoManage_bot"),
-                        InlineKeyboardButton(text="Music", url="t.me/RosoMusic_bot"),
-                    ],
-                    [   
-                        InlineKeyboardButton(text="⌂", callback_data="help_back")],
-                ]
-            ),
-        )
+buttons = [
+    [
+        InlineKeyboardButton(
+            text="➕ Add to your Group ➕", url="t.me/RosoManage2_bot?startgroup=true"),
+    ],
+    [
+        InlineKeyboardButton(
+            text="ℹ️ About", callback_data="layla_"),
+        InlineKeyboardButton(
+            text="Plugins ⏹", callback_data="plugin_"),
+    ],
+    [  
+        InlineKeyboardButton(text="🔘 More-Bot 🔘", callback_data="other_"
+    ),
+    ],
+]
