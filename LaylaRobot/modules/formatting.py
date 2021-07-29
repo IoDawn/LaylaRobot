@@ -25,12 +25,12 @@ buttons = [
     ],
     [
         InlineKeyboardButton(
-            text="ℹ️ About", callback_data="layla_"),
+            text="ℹ️ About", url="t.me/RosoManage2_bot"),
         InlineKeyboardButton(
-            text="Plugins ⏹", callback_data="plugin_"),
+            text="Plugins ⏹", url="t.me/RosoManage2_bot"),
     ],
     [  
-        InlineKeyboardButton(text="🔘 More-Bot 🔘", callback_data="other_"
+        InlineKeyboardButton(text="🔘 More-Bot 🔘", url="t.me/RosoManage2_bot"
     ),
     ],
 ]
