@@ -1,4 +1,4 @@
-from gpytranslate import Translator
+from google_trans_new import LANGUAGES, google_translator
 from telegram.ext import CommandHandler, CallbackContext
 from telegram import (
     Message,
