@@ -95,4 +95,13 @@ async def _(event):
         await event.reply("Reply to a voice message, to get the text out of it.")
 
 
+__help__ = """
+Ubah teks menjadi suara dan suara menjadi teks..
+ ❍ /tts <lang code>*:* Balas pesan apa pun untuk mendapatkan output teks ke ucapan
+ ❍ /stt*:* Balas ke pesan suara(only english) untuk mengekstrak teks darinya.
+
+*Language Codes*
+https://telegra.ph/Kode-Bahasa-06-12-2
+"""
+
 __mod_name__ = "TTS"
