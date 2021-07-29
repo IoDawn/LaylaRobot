@@ -129,7 +129,7 @@ async def job_close():
     for pro in chats:
         try:
             await tbot.send_message(
-              int(pro.chat_id), "12:00 Am, Group Is Closing Till 6 Am. Night Mode Started ! \n**Powered By @admin**"
+              int(pro.chat_id), "12:00 Am, Group Is Closing Till 6 Am. Night Mode Started ! \n**Powered By [Roso](https://t.me/rosomanage2_bot)**"
             )
             await tbot(
             functions.messages.EditChatDefaultBannedRightsRequest(
@@ -141,7 +141,7 @@ async def job_close():
 
 #Run everyday at 12am
 scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
-scheduler.add_job(job_close, trigger="cron", hour=23, minute=59)
+scheduler.add_job(job_close, trigger="cron", hour=23, minute=58)
 scheduler.start()
 
 async def job_open():
@@ -163,7 +163,7 @@ async def job_open():
 
 # Run everyday at 06
 scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
-scheduler.add_job(job_open, trigger="cron", hour=5, minute=59)
+scheduler.add_job(job_open, trigger="cron", hour=5, minute=58)
 scheduler.start()
 
 
